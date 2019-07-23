@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<extension>
+    <id>adv_order</id>
+    <version>1.0.0</version>
+	<type>extension</type>
+	<category>Sale</category>
+    <cartversions>
+        <item>1.2.0</item>
+    </cartversions>
+    <layout></layout>
+    <priority>1</priority>
+    <settings>
+    </settings>
+	<note>true</note>
+    <preview>
+	</preview>
+	<help_file><![CDATA[help.txt]]></help_file>
+	<help_link><![CDATA[http://www.abantecart.com]]></help_link>
+    <install>
+	    <trigger>install.php</trigger>
+	</install>
+	<uninstall>
+	    <trigger>uninstall.php</trigger>
+	</uninstall>
+</extension>

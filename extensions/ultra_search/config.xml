@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+    <id>ultra_search</id>
+    <version>1.1.4</version>
+    <type>extensions</type>
+    <category>extensions</category>
+    <cartversions>
+        <item>1.2</item>
+    </cartversions>
+    <priority>1</priority>
+    <settings>
+        <item id="ultra_search_status">
+            <type>checkbox</type>
+            <default_value>0</default_value>
+        </item>
+        <item id="ultra_search_items_limit">
+          <type>input</type>
+          <default_value>3</default_value>
+        </item>
+        <item id="ultra_search_new_window">
+          <type>checkbox</type>
+          <default_value>0</default_value>
+        </item>
+        <item id="ultra_search_enter">
+          <type>checkbox</type>
+          <default_value>0</default_value>
+        </item>
+        <item id="ultra_search_brands">
+          <type>checkbox</type>
+          <default_value>1</default_value>
+        </item>
+        <item id="ultra_search_categories">
+          <type>checkbox</type>
+          <default_value>1</default_value>
+        </item>
+        <item id="ultra_search_reviews">
+          <type>checkbox</type>
+          <default_value>0</default_value>
+        </item>
+        <item id="ultra_search_pages">
+          <type>checkbox</type>
+          <default_value>0</default_value>
+        </item>
+        <item id="ultra_search_products">
+          <type>checkbox</type>
+          <default_value>1</default_value>
+        </item>
+        <item id="ultra_search_ptags">
+          <type>checkbox</type>
+          <default_value>1</default_value>
+        </item>
+        <item id="ultra_search_pdesc">
+          <type>checkbox</type>
+          <default_value>0</default_value>
+        </item>
+        <item id="ultra_search_images">
+            <type>checkbox</type>
+            <default_value>0</default_value>
+        </item>
+        <item id="ultra_search_textcut">
+            <type>checkbox</type>
+            <default_value>0</default_value>
+        </item>
+        <item id="ultra_search_colour_ignore">
+          <type>checkbox</type>
+          <default_value>1</default_value>
+        </item>
+        <item id="ultra_search_colour_1">
+            <type required="true">number</type>
+            <default_value>022753</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="ultra_search_colour_2">
+            <type required="true">number</type>
+            <default_value>ffffff</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="ultra_search_colour_3">
+            <type required="true">number</type>
+            <default_value>fffff8</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="ultra_search_colour_8">
+            <type required="true">number</type>
+            <default_value>545446</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="ultra_search_colour_4">
+            <type required="true">number</type>
+            <default_value>99a9ba</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="ultra_search_colour_5">
+            <type required="true">number</type>
+            <default_value>120e03</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="ultra_search_colour_6">
+            <type required="true">number</type>
+            <default_value>fecc2f</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="ultra_search_colour_7">
+            <type required="true">number</type>
+            <default_value>eb1111</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="ultra_search_search_id">
+            <type>input</type>
+            <default_value>filter_keyword</default_value>
+        </item>
+        <item id="ultra_search_all_lang">
+          <type>checkbox</type>
+          <default_value>0</default_value>
+        </item>
+    </settings>
+    <additional_settings><![CDATA[localisation/language_definitions]]></additional_settings>
+    <help_file><![CDATA[help/ultra_search_help.txt]]></help_file>
+    <note>true</note>
+  	<help_link><![CDATA[https://marketplace.abantecart.com/ultra_search]]></help_link>
+    <install>
+        <trigger>install.php</trigger>
+    </install>
+    <uninstall>
+        <trigger>uninstall.php</trigger>
+    </uninstall>
+</extension>

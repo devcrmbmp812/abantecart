@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<definitions>
+  <definition>
+	<key>error_no_help_file</key>
+	<value><![CDATA[No help file found]]></value>
+  </definition>
+  <definition>
+	<key>text_help</key>
+	<value><![CDATA[Blog Help]]></value>
+  </definition>
+</definitions>

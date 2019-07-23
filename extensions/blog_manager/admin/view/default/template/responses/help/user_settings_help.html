@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Blog Manager</title>
+</head>
+
+<body>
+
+<h3>User Settings</h3>
+<p>Your blog can be open to anyone to post comments or you can require your users to log in before they post a comment. If you choose to restrict access, you have the choice to use your 
+existing and future customers as a data source or to keep access to your blog completely separate. Regardless of how you operate your blog, you still have the ability to moderate comments 
+(see Comments tab).</p>
+
+<p><strong>Using Customer Information</strong></p>
+<p>When using customer information as your data source, some basic information is copied to the blog user table where additional data is kept for your blog user. When new users register, they will use 
+your store registration process and automatically added a blog user. You can still manually add users outside of your customer base who will only have access to your blog.</p>
+
+<p> If you are using your store domain for your blog, and not a different domain, store users who log into your blog will also be logged into the store and vice versa. If you are using a different 
+domain, store users may have to log into the blog separate from logging into the store but use the same credentials.</p>
+
+<p><strong>Using Separate Login Credentials</strong></p>
+<p>When using separate login credentials, users will not be logged into your store when logging into the blog. When users register, they use a separate process than your store users. You have the same 
+options for approving and activating your blog users as with your store.</p>
+
+<p>When using separate login credentials, a new customer group is created: Blog Users. This will allow you to promote specials and discounts only for your blog users.</p>
+
+<p><strong>Switching Between Methods</strong></p>
+<p>While it is best to set up your blog using one method or another, it is possible to switch methods.</p>
+<ul>
+<li>Switching between an open model to a login model. 
+	<ul>
+    	<li>Dependant on your login model:
+        	<ul>
+            	<li>Customers now have access with the store login credentials.</li>
+            	<li>Existing users will have to register before posting comments.</li>
+            </ul>
+        </li>
+        <li>All past comment history remains as is.</li>
+        <li>You will need to create a new user entity for each your authors and then recreate your authors with the new user id. Any articles will have to be manually moved to the new author id.</li>
+    </ul>
+</li>
+<li>Switching between a login model to an open model.
+	<ul>
+    	<li>No ability to restrict access. However, you still have ability to moderate comments</li>
+    	<li>All user records are retained.</li>
+        <li>All user references in blog comments remain the same.</li>
+        <li>Existing users will no longer have the ability to edit their settings and notifications.</li>
+        <li>Admin access to users the user interface is disabled.</li>
+    </ul>
+</li>
+<li>Switching between customer access and separate access.
+	<ul>
+    	<li>All past comment history is retained.</li>
+		<li>Customers will no longer have access to your blog.</li>
+		<li>Existing manually entered users are retained.</li>
+    </ul>
+</li>
+</ul>
+<br />
+<br />
+</body>
+
+</html>
+
+
+
+
+

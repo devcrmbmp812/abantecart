@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions>
+	<definition>
+		<key>blog_feed_title</key>
+		<value><![CDATA[Blog Feed]]></value>
+	</definition>
+	<definition>
+		<key>text_subscribe</key>
+		<value><![CDATA[Subscribe To Our Blog]]></value>
+	</definition>
+	<definition>
+		<key>text_rss2_link</key>
+		<value><![CDATA[RSS2 Link]]></value>
+	</definition>
+	<definition>
+		<key>text_atom_link</key>
+		<value><![CDATA[ATOM 1.0 Link]]></value>
+	</definition>
+	<definition>
+		<key>text_rss2</key>
+		<value><![CDATA[RSS 2.0]]></value>
+	</definition>
+	<definition>
+		<key>text_atom</key>
+		<value><![CDATA[ATOM 1.0]]></value>
+	</definition>
+</definitions>

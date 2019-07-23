@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<definitions>
+  <definition>
+	<key>text_heading</key>
+	<value><![CDATA[Register]]></value>
+  </definition>
+  <definition>
+	<key>text_heading_login</key>
+	<value><![CDATA[Blog Login]]></value>
+  </definition>
+  <definition>
+	<key>heading_settings_title</key>
+	<value><![CDATA[Blog User Settings]]></value>
+  </definition>
+  <definition>
+	<key>heading_title_activate</key>
+	<value><![CDATA[Success - Please Activate]]></value>
+  </definition>
+  <definition>
+	<key>heading_title_activated</key>
+	<value><![CDATA[Success - Your Account Has Been Activated]]></value>
+  </definition>
+  <definition>
+	<key>heading_title_already_activated</key>
+	<value><![CDATA[Your Account Is Active]]></value>
+  </definition>
+  <definition>
+	<key>heading_title_account_not_found</key>
+	<value><![CDATA[Account Was Not Found]></value>
+  </definition
+  <definition>
+	<key>heading_title_approval</key>
+	<value><![CDATA[Success - Approval Pending]]></value>
+  </definition>
+  <definition>
+	<key>heading_title_created</key>
+	<value><![CDATA[Success - Account Created]]></value>
+  </definition>
+  <definition>
+	<key>heading_reset_password</key>
+	<value><![CDATA[Reset Password]]></value>
+  </definition>
+  <definition>
+	<key>heading_change_password</key>
+	<value><![CDATA[Change Password]]></value>
+  </definition>
+  <definition>
+	<key>text_form_heading</key>
+	<value><![CDATA[Please Enter Your Information]]></value>
+  </definition>
+  <definition>
+	<key>text_form_edit_heading</key>
+	<value><![CDATA[Edit Your Information]]></value>
+  </definition>
+  <definition>
+	<key>text_notifications</key>
+	<value><![CDATA[Notifications]]></value>
+  </definition>
+  <definition>
+	<key>text_change_password</key>
+	<value><![CDATA[Change Your Password]]></value>
+  </definition>
+  <definition>
+    <key>text_use_username</key>
+    <value><![CDATA[Show Username]]></value>
+  </definition>
+  <definition>
+    <key>text_use_fullname</key>
+    <value><![CDATA[Show Full Name]]></value>
+  </definition>
+  <definition>
+	<key>text_notice_type</key>
+	<value><![CDATA[Notice Type]]></value>
+  </definition>
+  <definition>
+	<key>text_select_time_zone</key>
+	<value><![CDATA[Select Time Zone]]></value>
+  </definition>
+  <definition>
+	<key>entry_captcha</key>
+	<value><![CDATA[Enter the Code in the Box:]]></value>
+  </definition>
+  <definition>
+	<key>error_captcha</key>
+	<value><![CDATA[Verification code does not match the image!]]></value>
+  </definition>
+  <definition>
+	<key>text_action</key>
+	<value><![CDATA[Action]]></value>
+  </definition>
+  <definition>
+	<key>text_no_notifications</key>
+	<value><![CDATA[You do not have any active notifications]]></value>
+  </definition>
+  <definition>
+	<key>text_all_comment</key>
+	<value><![CDATA[All Comments]]></value>
+  </definition>
+  <definition>
+	<key>text_on_reply</key>
+	<value><![CDATA[Replies To My Comment]]></value>
+  </definition>
+  <definition>
+	<key>user_edit_success</key>
+	<value><![CDATA[You have successfully updated your information]]></value>
+  </definition>
+  <definition>
+	<key>entry_first_name</key>
+	<value><![CDATA[First Name:]]></value>
+  </definition>
+  <definition>
+	<key>entry_last_name</key>
+	<value><![CDATA[Last Name:]]></value>
+  </definition>
+  <definition>
+	<key>entry_user_name</key>
+	<value><![CDATA[Username:]]></value>
+  </definition>
+  <definition>
+	<key>entry_email</key>
+	<value><![CDATA[Email Address:]]></value>
+  </definition>
+  <definition>
+    <key>entry_name_option</key>
+    <value><![CDATA[Display Name:]]></value>
+  </definition>
+  <definition>
+	<key>entry_loginname</key>
+	<value><![CDATA[Username:]]></value>
+  </definition>
+  <definition>
+	<key>entry_password</key>
+	<value><![CDATA[Password:]]></value>
+  </definition>
+  <definition>
+	<key>entry_old_password</key>
+	<value><![CDATA[Current Password:]]></value>
+  </definition>
+  <definition>
+	<key>entry_new_password</key>
+	<value><![CDATA[New Password:]]></value>
+  </definition>
+  <definition>
+	<key>entry_confirm</key>
+	<value><![CDATA[Confirm:]]></value>
+  </definition>
+  <definition>
+	<key>entry_site_url</key>
+	<value><![CDATA[Website or Blog Address]]></value>
+  </definition>
+  <definition>
+	<key>entry_role</key>
+	<value><![CDATA[Role:]]></value>
+  </definition>
+  <definition>
+	<key>entry_users_tz</key>
+	<value><![CDATA[Time Zone (optional):]]></value>
+  </definition>
+  <definition>
+	<key>text_forgot_password</key>
+	<value><![CDATA[Forgot Password?]]></value>
+  </definition>
+  <definition>
+	<key>text_register</key>
+	<value><![CDATA[Register]]></value>
+  </definition>
+  <definition>
+	<key>text_http</key>
+	<value><![CDATA[http://]]></value>
+  </definition>
+  <definition>
+	<key>text_article</key>
+	<value><![CDATA[Article Name]]></value>
+  </definition>
+  <definition>
+	<key>text_no_loginname</key>
+	<value><![CDATA[You must enter a username.]]></value>
+  </definition>
+  <definition>
+	<key>text_no_password</key>
+	<value><![CDATA[You must enter a password.]]></value>
+  </definition>
+  <definition>
+	<key>text_error_user_name</key>
+	<value><![CDATA[Please enter a username of at least 6 characters.]]></value>
+  </definition>
+  <definition>
+	<key>text_error_user_name_notunique</key>
+	<value><![CDATA[This username is already in use. Please choose another.]]></value>
+  </definition>
+  <definition>
+	<key>text_error_password</key>
+	<value><![CDATA[Please enter a password of at least 6 characters and not more than 20.]]></value>
+  </definition>
+  <definition>
+	<key>text_error_password_match</key>
+	<value><![CDATA[Your password does not match.]]></value>
+  </definition>
+  <definition>
+	<key>text_error_email</key>
+	<value><![CDATA[Your email address does not appear to be valid.]]></value>
+  </definition>
+  <definition>
+	<key>text_error_email_exists</key>
+	<value><![CDATA[This email address is already in use.]]></value>
+  </definition>
+  <definition>
+	<key>text_error_site_url</key>
+	<value><![CDATA[Your web address does not appear to be valid.]]></value>
+  </definition>
+  <definition>
+	<key>text_error_entry_title</key>
+	<value><![CDATA[Please enter a valid title for your Article]]></value>
+  </definition>
+  <definition>
+	<key>text_error_bad_password</key>
+	<value><![CDATA[Your password does not match our records.]]></value>
+  </definition>
+  <definition>
+	<key>error_errors</key>
+	<value><![CDATA[There were errors in your information. Please correct and resubmit.]]></value>
+  </definition>
+  <definition>
+    <key>text_subject</key>
+    <value><![CDATA[%s - Thank you for registering]]></value>
+  </definition>
+  <definition>
+    <key>text_welcome</key>
+    <value><![CDATA[Welcome and thank you for registering at %s!]]></value>
+  </definition>
+  <definition>
+    <key>text_login</key>
+    <value><![CDATA[Your blog account has now been created and you can access it by visiting our blog or at the following URL: %s]]></value>
+  </definition>
+  <definition>
+    <key>text_approval</key>
+    <value><![CDATA[Your account must be approved before you can login. Once approved you can log into our blog by using your username and password by visiting our blog at the following URL: %s]]></value>
+  </definition>
+  <definition>
+    <key>text_activate</key>
+    <value><![CDATA[Before we can activate your blog account one last step must be taken to complete your registration. Please note - you must complete this last step to become a registered blog member. You will only need to visit this URL once to activate your blog account.
+    To complete your registration, please visit this URL:
+    %s ]]></value>
+  </definition>
+  <definition>
+    <key>text_services</key>
+    <value><![CDATA[Once logged in, you will be able to contribute your comments.]]></value>
+  </definition>
+  <definition>
+    <key>text_thanks</key>
+    <value><![CDATA[Thanks,]]></value>
+  </definition>
+  <definition>
+    <key>text_success_activated</key>
+    <value><![CDATA[Success: Your blog account was activated successfully. Please login with your credentials.]]></value>
+  </definition>
+  <definition>
+    <key>text_already_activated</key>
+    <value><![CDATA[Your blog account has already been activated. Please login with your credentials.]]></value>
+  </definition>
+  <definition>
+    <key>text_resend_activation_email</key>
+    <value><![CDATA[Error: Your activation code was not found. Your session may have expired. To send new code please click this <a href=" %s ">link</a>]]></value>
+  </definition>
+  <definition>
+    <key>text_message_activate</key>
+    <value><![CDATA[Before we can activate your blog account one last step must be taken to complete your registration.
+    Please note - you must complete this last step to become a registered blog member. An email has been sent to the address you provided. Click on the link to activate your account. ]]></value>
+  </definition>
+  <definition>
+    <key>text_message_approval</key>
+    <value><![CDATA[Your account must be approved before you can login. We will process your request as soon as we can. An email whill be sent when your accout has been approved.]]></value>
+  </definition>
+  <definition>
+    <key>text_message_success</key>
+    <value><![CDATA[You have successfully created an account.]]></value>
+  </definition>
+  <definition>
+    <key>text_email_subject</key>
+    <value><![CDATA[%s - New Password]]></value>
+  </definition>
+  <definition>
+    <key>text_greeting</key>
+    <value><![CDATA[A new password was requested from %s.]]></value>
+  </definition>
+  <definition>
+    <key>text_password</key>
+    <value><![CDATA[Your new password to is:]]></value>
+  </definition>
+  <definition>
+    <key>text_password_success</key>
+    <value><![CDATA[Your new password has been emailed to you.]]></value>
+  </definition>
+  <definition>
+    <key>text_forgot_message</key>
+    <value><![CDATA[Enter your login username and email address associated with your blog account. Your new password will be emailed to you.]]></value>
+  </definition>
+  <definition>
+    <key>text_credentials_not_found</key>
+    <value><![CDATA[The credentials you entered do not exist in our system. Please try again. If you continue to have problems, please contact us.]]></value>
+  </definition>
+  <definition>
+    <key>text_password_change_subject</key>
+    <value><![CDATA[%s - Password Change Request]]></value>
+  </definition>
+  <definition>
+    <key>text_password_change_greeting</key>
+    <value><![CDATA[You or someone has initiated a password chanage at %s.]]></value>
+  </definition>
+  <definition>
+    <key>text_password_change</key>
+    <value><![CDATA[If you did not request this password change, please contact us.]]></value>
+  </definition>
+  <definition>
+    <key>text_password_change_success</key>
+    <value><![CDATA[Your password has been changed]]></value>
+  </definition>
+  <definition>
+    <key>text_change_password_message</key>
+    <value><![CDATA[To change your password, enter your existing password then your new password.]]></value>
+  </definition>
+  <definition>
+    <key>text_cust_edit</key>
+    <value><![CDATA[To edit customer information,]]></value>
+  </definition>
+  <definition>
+    <key>text_click_here</key>
+    <value><![CDATA[click here]]></value>
+  </definition>
+  <definition>
+    <key>text_account</key>
+    <value><![CDATA[Account]]></value>
+  </definition>
+  <definition>
+    <key>text_name</key>
+    <value><![CDATA[Name]]></value>
+  </definition>
+  <definition>
+    <key>text_status</key>
+    <value><![CDATA[Status]]></value>
+  </definition>
+  <definition>
+    <key>button_done</key>
+    <value><![CDATA[Done]]></value>
+  </definition>
+</definitions>

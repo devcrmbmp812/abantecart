@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+    <id>react_slider</id>
+    <version>1.0.6</version>
+    <type>extensions</type>
+    <category>extensions</category>
+    <cartversions>
+        <item>1.2</item>
+    </cartversions>
+    <priority>1</priority>
+    <settings>
+        <item id="react_slider_status">
+            <type>checkbox</type>
+            <default_value>0</default_value>
+        </item>
+        <item id="react_slider_react_slider">
+          <type>resource</type>
+    			<resource_type>image</resource_type>
+    			<default_value />
+        </item>
+        <item id="react_slider_colour_1">
+            <type required="true">number</type>
+            <default_value>ffffff</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="react_slider_colour_2">
+            <type required="true">number</type>
+            <default_value>ffffff</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="react_slider_colour_3">
+            <type required="true">number</type>
+            <default_value>65106a</default_value>
+            <pattern_validate>/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/</pattern_validate>
+        </item>
+        <item id="react_slider_time">
+            <type required="true">number</type>
+            <default_value>4000</default_value>
+            <pattern_validate></pattern_validate>
+        </item>
+        <item id="react_slider_alllink">
+            <type>checkbox</type>
+            <default_value>1</default_value>
+        </item>
+        <item id="react_slider_fullwidth">
+            <type>checkbox</type>
+            <default_value>0</default_value>
+        </item>
+        <item id="react_slider_text">
+          <type>html_template</type>
+    			<default_value/>
+    			<template>responses/extension/react_slider_text.tpl</template>
+    		</item>
+    </settings>
+    <additional_settings><![CDATA[design/layout]]></additional_settings>
+    <help_file><![CDATA[help/react_slider_help.txt]]></help_file>
+    <note>true</note>
+  	<help_link><![CDATA[https://marketplace.abantecart.com/react_slider]]></help_link>
+    <install>
+        <trigger>install.php</trigger>
+    </install>
+    <uninstall>
+        <trigger>uninstall.php</trigger>
+    </uninstall>
+</extension>

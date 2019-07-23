@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Blog Manager</title>
+<style type="text/css">
+.custom-counter {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.custom-counter li {
+  counter-increment: step-counter;
+  margin-bottom: 10px;
+}
+
+.custom-counter li::before {
+  content: counter(step-counter);
+  margin-right: 5px;
+  font-size: 80%;
+  background-color: rgb(0,200,200);
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+</style></head>
+
+<body>
+
+<h3>Blog Manager</h3>
+<p><strong>It is important you read this entire page when completing your blog setup.</strong></p>
+<p> The Blog Manager is designed to build and manage your very own blog within your store pages using your current store design or your own unique design. This feature packed version 
+will support one blog for a single store.</p>
+<p>In order for your blog to function correctly, you must complete the minimal setup requirements. Once complete, your blog will be accessible through the url 
+http://your-store-url.com/blog or with your own domain name (see below). </p> 
+
+<p>Once installed and activated, you will need to access the Blog Manager in the Design section of the Admin Control Panel (or click Additional Settings) to complete your setup.</p> 
+
+
+<h4>Minimum Setup Requirements</h4>
+<ol class="custom-counter">
+<li>Create you new blog.</li>
+<p>On the Blog Settings Details page, enter your blog name, owner information and your blog url. Your store url with the /blog directory is automatically entered for you. If you wish to use a 
+different url, choose the option from the Blog Domain Name dropdown and enter your values. Refer to the Using a Different Domain Name Section below. When you save this page, the rest of the settings tabs will appear. Proceed through each tab and set your disired values.</p> 
+<li>Edit your .htaccess file</li>
+
+<p>In order for certain functions to work properly, you must edit your .htaccess file as you did when you initially set up your AbanteCart store. With your file open, locate the section:</p>
+
+<pre># SEO URL Settings
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\?*$ index.php?_route_=$1 [L,QSA]</pre>
+
+<p> Directly <u>above</u> this section, add:</p>
+<pre>
+#BLOG Settings
+
+RewriteRule ^archive/(.*)/(.*)/?$ index.php?rt=blog/archive&m=$1&y=$2 [L,QSA]
+RewriteRule ^feed/?$ index.php?rt=blog/feed [L,QSA]</pre>
+
+<p>Be sure the statement "RewiteEngine On" located several lines above is uncommented. You should have only one "RewiteEngine On" directive active 
+in your .htaccess file and it must be before all other Rewrite commands. If you are using a different domain name, see the "Using a Different Domain Name" section below for some additional .htaccess editing requirements.</p>
+<li> Complete the remaining settings tabs </li>
+<p> Although your blog is now technically functional. You may want to adjust the default settings on each tab to your preferences.</p> 
+
+<li>Next Steps</li>
+<p> Complete the design and layout of your new blog (see below). Then create an author and write your first article. Please note: Until you create your first article, your blog will show the message: "No Articles Yet. Please check back soon."</p>
+</ol>
+<h4>Storefront Pages</h4>
+
+<p> When you installed your Blog Manager, some additional pages and blocks were created. The additional pages are copies of the default page for your template. You can leave the pages as is, or 
+customize as you see fit in the layout section of your store admin panel. </p>
+
+<h4>Blocks</h4>
+<p>Some convenience blocks have been provided for blog navigation.</p>
+<ul>
+<li><strong>Blog Login</strong> If you are restricting comment posting to your blog, this block is a login form. It is designed to use in the left or right sidebar. When logged in, the user sees links to the user settings pages.</li>
+<li><strong>Blog Categories</strong> A listing of blog categories. It is designed to use in the left or right sidebar.</li>
+<li><strong>Blog Archive</strong> A listing of blog articles listed by month/year. It is designed to use in the left or right sidebar.</li>
+<li><strong>Blog Feed</strong> A graphic link to your blog feed. It is designed to use in the left or right sidebar.</li>
+<li><strong>Blog Author</strong> A listing of blog authors. It is designed to use in the left or right sidebar.</li>
+<li><strong>Blog Active</strong> A listing of active articles sorted by most active to least active. It is designed to use in the left or right sidebar.</li>
+<li><strong>Blog Popular</strong> A listing of popular articles sorted by most popular to least popular. It is designed to use in the left or right sidebar.</li>
+<li><strong>Blog Latest</strong> A listing of latest blog activity, both new articles and comments. It is designed to use in the left or right sidebar. </li>
+<li><strong>Blog Top Menu</strong> A customizable menu bar designed to be placed in the header bottom section.</li>
+</ul>
+<p>With the exception of the login block, all blocks are customizable in the blog block settings section. Once placed on your layout, they must also be activated on the block settings page before they are visible</p>
+<a name="other" id="other"></a>
+<h4>Adding a Link To Your Menu</h4>
+<p>To add a link to your main menu to your blog, create a menu item as you normally would. In the Link field, enter blog/blog.
+<h4>Using a Different Domain Name</h4>
+<p>If you are planning to use a different domain name from your store domain, you must make some additional changes after you create your blog (Additional Settings). You must also set up this new domain 
+in your hosting providers admin panel and point this domain to the same web space as your store.</p>
+<ol class="custom-counter">
+<li>Add the following line to the top of teh BLOG Settings section:</li>
+<pre>RewriteCond %{HTTP_HOST} ^blog.YOUR-STORE-URL.com$</pre>
+<p><strong>Be sure to change the domain name to your domain name.</strong> You can use a sub-domian like blog.yourdomain.com or a completly different domain name. 
+Do not remove the ^ at the beginning and $ at the end. Your file should now look like this with your desired domain name in the appropriate location:</p>
+<pre>
+# BLOG Settings
+
+RewriteCond %{HTTP_HOST} ^blog.YOUR-STORE-URL.com$
+RewriteRule ^archive/(.*)/(.*)/?$ index.php?rt=blog/archive&m=$1&y=$2 [L,QSA]
+RewriteRule ^feed/?$ index.php?rt=blog/feed [L,QSA]</pre>
+<li>Edit your store config file</li>
+<p>You must make some changes to your core/lib/config.php file. Before making any changes, it is recommended to make a backup copy of this file. If you do not make these changes, you will receive error messages in 
+your log file every time your blog is accessed and some elements will not function properly.</p>
+<p>In your core/lib/config.php file locate the function _load_settings(). At or about line 138 in version 1.2.6 or line 161 in version 1.2.7 through 1.2.9, locate:</p>
+<pre>// if storefront and not default store try to load setting for given URL
+/* Example: 
+    Specific store config -> http://localhost/abantecart123 
+    Generic config -> http://localhost
+*/
+$config_url = preg_replace("(^https?://)", "", $this->cnfg['config_url'] );
+$config_url = preg_replace("(^://)", "", $config_url );
+if (
+    !(is_int(strpos($config_url,$url))) &&
+    !(is_int(strpos($url, $config_url))) 			
+) { 
+// if requested url not a default store URL - do check other stores.</pre>
+<p>Replace this section with the following:</p>
+<pre>// if storefront and not default store try to load setting for given URL
+/* Example: 
+    Specific store config -> http://localhost/abantecart123 
+    Generic config -> http://localhost
+*/
+$config_url = preg_replace("(^https?://)", "", $this->cnfg['config_url'] );
+$config_url = preg_replace("(^://)", "", $config_url );
+
+// check if url is blog
+if(isset($this->cnfg['blog_url'])) {
+    $blog_url = preg_replace("(^https?://)", "", $this->cnfg['blog_url'] );
+    $blog_url = preg_replace("(^://)", "", $blog_url );
+}else{
+    $blog_url = '';
+}
+if (
+    !(is_int(strpos($config_url,$url))) &&
+    !(is_int(strpos($url, $config_url))) ||
+    !(is_int(strpos($blog_url,$url))) &&
+    !(is_int(strpos($url, $blog_url)))			
+) { 
+// if requested url not a default store URL - do check other stores.</pre>
+            
+<p>Upload the file to your server and test your new blog using your other domain name. Your blog will operate with both your storedomain.com/blog and your other domain name. 
+If you get an error for the config.php file in your logs, try clearing all your cache.</p>
+</ol>
+<p><strong>IMPORTANT NOTE!</strong> If you install a custom template after Blog manager is installed you will need to update the blog templates to work with your new template. Sumply turn off the Blog manager extension and then turn it back on. </p>
+<br />
+<p>If you like this extension, please rate it. If you have any problems or wish to submit suggested changes or new features, feel free to contact me at don@cornerstoresonline.com.  
+If you would like to have your blog listed as an example blog in the extension store listing let me know, I would be happy to add it.</p>
+<br />
+<br />
+<br />
+
+</body>
+</html>
+
+
+

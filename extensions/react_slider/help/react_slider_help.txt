@@ -1,0 +1,18 @@
+<h3>How do I get started</h3>
+<p>After setting up settings, please assign React Slider Block to layouts in Design -> <a href="#admin#rt=design/layout" target="new">Layouts</a>. <br>This can be done by choosing a layout and adding the <b>React Images Slider</b> block to the Header bottom section in the Home page layout.<br><br>
+</p>
+<p><img src="extensions/react_slider/help/help_1.png" style="max-width:100%" width="500px"></p>
+
+<h3>Best practices</h3>
+<p>Recommended image size is 1600px width with minimum height 420px.</p>
+
+
+
+<h3>Banner Edit</h3>
+<p>To change images please edit the Graphic Banners from <b>React Image Slider banners</b> group in Design -> <a href="#admin#rt=extension/banner_manager" target="new">Banners</a></p>
+<p><img src="extensions/react_slider/help/help_slide.png" style="max-width:100%"></p>
+<ul>
+<li>If you want change or add CSS rules edit this file extensions/react_slider/storefront/view/default/css/react_slider.css</li>
+<li>Based on theme used you may need to modify html for ReactSlider block
+/extensions/react_slider/storefront/view/default/template/blocks/react_slider/react_slider.tpl</li>
+</ul>

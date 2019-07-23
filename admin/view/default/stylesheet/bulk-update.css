@@ -1,0 +1,39 @@
+.csv-file-input{
+  width: calc(100% - 150px);
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.preview{
+  background-color: #00A2C6;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.preview:hover{
+    opacity: 0.8;
+}
+
+.update{
+  background-color: #00A2C6;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 750px;
+  margin: 10px 0px;
+  float: right;
+}
+.update:hover{
+    opacity: 0.9;
+}
+input:disabled, textarea:disabled{
+	color: black;
+}

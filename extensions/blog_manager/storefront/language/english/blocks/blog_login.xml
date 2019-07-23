@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions>
+	<definition>
+		<key>text_login_title</key>
+		<value><![CDATA[Blog Login]]></value>
+	</definition>
+	<definition>
+		<key>button_login</key>
+		<value><![CDATA[Login]]></value>
+	</definition>
+	<definition>
+		<key>text_welcome</key>
+		<value><![CDATA[Welcome Back]]></value>
+	</definition>
+	<definition>
+		<key>text_username</key>
+		<value><![CDATA[Username]]></value>
+	</definition>
+	<definition>
+		<key>text_password</key>
+		<value><![CDATA[Password]]></value>
+	</definition>
+	<definition>
+		<key>text_error_login</key>
+		<value><![CDATA[No match for Username and/or Password]]></value>
+	</definition>
+	<definition>
+		<key>text_forgot_password</key>
+		<value><![CDATA[Forgot Password?]]></value>
+	</definition>
+	<definition>
+		<key>text_register</key>
+		<value><![CDATA[Register]]></value>
+	</definition>
+	<definition>
+		<key>text_edit_settings</key>
+		<value><![CDATA[Edit User Settings]]></value>
+	</definition>
+	<definition>
+		<key>text_notifications</key>
+		<value><![CDATA[Notifications]]></value>
+	</definition>
+	<definition>
+		<key>text_author_settings</key>
+		<value><![CDATA[Edit Author Settings]]></value>
+	</definition>
+	<definition>
+		<key>text_edit_entries</key>
+		<value><![CDATA[Articles]]></value>
+	</definition>
+	<definition>
+		<key>text_logoff</key>
+		<value><![CDATA[Logout]]></value>
+	</definition>
+</definitions>

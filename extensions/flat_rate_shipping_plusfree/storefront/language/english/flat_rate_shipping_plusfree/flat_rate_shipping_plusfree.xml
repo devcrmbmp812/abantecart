@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<definitions>
+  <definition>
+    <key>text_title</key>
+    <value><![CDATA[Flat Rate]]></value>
+  </definition>
+  <definition>
+    <key>text_description</key>
+    <value><![CDATA[Flat Shipping Rate for amount less than %s to %s]]></value>
+  </definition>
+  <definition>
+    <key>text_description_free</key>
+    <value><![CDATA[Free Flat Shipping Rate for amount more than %s to %s]]></value>
+  </definition>
+</definitions>

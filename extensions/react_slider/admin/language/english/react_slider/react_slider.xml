@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions>
+    <definition>
+        <key>react_slider_name</key>
+        <value><![CDATA[Images Slider]]></value>
+    </definition>
+    <definition>
+      <key>react_slider_note</key>
+      <value><![CDATA[
+        After setting up settings, please assign React Slider Block to layouts in Design -> <a href="#admin#rt=design/layout" target="new">Layouts</a>. <br>This can be done by choosing a layout and adding the <b>React Images Slider</b> block to the Header bottom section in the Home page layout.<br><br>
+        To change images please edit the Graphic Banners from <b>React Image Slider banners</b> group in Design -> <a href="#admin#rt=extension/banner_manager" target="new">Banners</a>]]></value>
+    </definition>
+    <definition>
+  		<key>react_slider_time</key>
+  		<value><![CDATA[Auto change time (ms):<br /><span class="help">Miliseconds. Type 3000 for 3s interval.</span>]]></value>
+  	</definition>
+    <definition>
+      <key>react_slider_react_slider</key>
+      <value><![CDATA[Static preload image:<br /><span class="help">Upload an image to show before slider loaded. Optimize it as mush as possible or remove to hide.</span>]]></value>
+    </definition>
+    <definition>
+  		<key>react_slider_text</key>
+  		<value><![CDATA[Read more text:]]></value>
+  	</definition>
+    <definition>
+  		<key>react_slider_colour_1</key>
+  		<value><![CDATA[Banner Name color:<br /><span class="help">Color (hex) code like 022753</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>react_slider_colour_1_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>022753</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>react_slider_colour_2</key>
+  		<value><![CDATA[Banner text color:<br /><span class="help">Color (hex) code like 022753</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>react_slider_colour_2_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>022753</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>react_slider_colour_3</key>
+  		<value><![CDATA[Link color:<br /><span class="help">Color (hex) code like 65106a</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>react_slider_colour_3_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>65106a</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>react_slider_alllink</key>
+  		<value><![CDATA[Hide Read more button:<br /><span class="help">Whole banner area is link</span>]]></value>
+  	</definition>
+    <definition>
+  		<key>react_slider_fullwidth</key>
+  		<value><![CDATA[Try to force fullwidth:]]></value>
+  	</definition>
+</definitions>

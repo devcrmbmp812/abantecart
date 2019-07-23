@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<extension>
+	<id>fraudlabspro</id>
+	<version>1.0.7</version>
+	<type>extensions</type>
+	<category>payment</category>
+	<cartversions>
+		<item>0.9</item>
+		<item>1.0</item>
+		<item>1.1</item>
+		<item>1.2</item>
+	</cartversions>
+	<layout></layout>
+	<priority>1</priority>
+	<settings>
+		<item id="fraudlabspro_api_key">
+			<type required="true">input</type>
+			<default_value></default_value>
+		</item>
+		<item id="fraudlabspro_reject_score">
+			<type required="true">input</type>
+			<default_value>80</default_value>
+		</item>
+		<item id="fraudlabspro_test_ip">
+			<type>input</type>
+			<default_value></default_value>
+		</item>
+	</settings>
+	<note>true</note>
+	<install>
+	    <sql>install.sql</sql>
+	</install>
+	<uninstall>
+	    <sql>uninstall.sql</sql>
+	</uninstall>
+</extension>

@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<definitions>
+  <definition>
+	<key>blog_author_name</key>
+	<value><![CDATA[Blog Author]]></value>
+  </definition>
+  <definition>
+	<key>authors_name</key>
+	<value><![CDATA[Authors]]></value>
+  </definition>	
+  <definition>
+    <key>heading_title</key>
+    <value><![CDATA[Blog Authors]]></value>
+  </definition>
+  <definition>
+    <key>update_author_title</key>
+    <value><![CDATA[Update Author]]></value>
+  </definition>
+  <definition>
+    <key>insert_author_title</key>
+    <value><![CDATA[Add Author]]></value>
+  </definition>
+  <definition>
+    <key>update_author_layout</key>
+    <value><![CDATA[Author Layout]]></value>
+  </definition>
+  <definition>
+    <key>text_update_success</key>
+    <value><![CDATA[Success: You have successfully updated this author!]]></value>
+  </definition>
+  <definition>
+    <key>text_insert_success</key>
+    <value><![CDATA[Success: You have successfully added this author!]]></value>
+  </definition>
+  <definition>
+    <key>text_success_layout</key>
+    <value><![CDATA[Success: You have modified author page layout.]]></value>
+  </definition>
+  <definition>
+    <key>text_hidden</key>
+    <value><![CDATA[Hidden]]></value>
+  </definition>
+  <definition>
+    <key>text_http</key>
+    <value><![CDATA[http://]]></value>
+  </definition>
+  <definition>
+    <key>text_default</key>
+    <value><![CDATA[Default]]></value>
+  </definition>
+  <definition>
+    <key>column_author_id</key>
+    <value><![CDATA[Id]]></value>
+  </definition>
+  <definition>
+    <key>column_author_name</key>
+    <value><![CDATA[Author Name]]></value>
+  </definition>
+  <definition>
+    <key>column_author_role</key>
+    <value><![CDATA[Role]]></value>
+  </definition>
+  <definition>
+    <key>column_blog_title</key>
+    <value><![CDATA[Blog]]></value>
+  </definition>
+  <definition>
+    <key>column_article_entries</key>
+    <value><![CDATA[# of Articles]]></value>
+  </definition>
+  <definition>
+    <key>column_status</key>
+    <value><![CDATA[Status]]></value>
+  </definition>
+  <definition>
+    <key>column_action</key>
+    <value><![CDATA[Action]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_users</key>
+    <value><![CDATA[Load Data From Users:]]></value>
+  </definition>
+  <definition>
+    <key>text_select_user</key>
+    <value><![CDATA[--Select User--]]></value>
+  </definition>
+  <definition>
+    <key>entry_status</key>
+    <value><![CDATA[Author Status:]]></value>
+  </definition>
+  <definition>
+    <key>entry_firstname</key>
+    <value><![CDATA[First Name:]]></value>
+  </definition>
+  <definition>
+    <key>entry_lastname</key>
+    <value><![CDATA[Last Name:]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_author_page</key>
+    <value><![CDATA[Display Author Page:<br /><span class="help">Select to show article listings page by this author.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_role_id</key>
+    <value><![CDATA[Blog Role:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_title</key>
+    <value><![CDATA[Blog:]]></value>
+  </definition>
+  <definition>
+    <key>entry_author_title</key>
+    <value><![CDATA[Title:]]></value>
+  </definition>
+  <definition>
+    <key>entry_email</key>
+    <value><![CDATA[Email Address:]]></value>
+  </definition>
+  <definition>
+    <key>entry_contact_info</key>
+    <value><![CDATA[Other Contact Info:<br /><span class="help">For your use only</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_site_url</key>
+    <value><![CDATA[Site URL:]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_author_link</key>
+    <value><![CDATA[Show Link:<br /><span class="help">Link will be displayed in author bio</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_author_description</key>
+    <value><![CDATA[About The Author:<br /><span class="help">All information entered here appears, exactly as formatted, as the author bio.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_meta_description</key>
+    <value><![CDATA[Meta Tag Description:]]></value>
+  </definition>
+  <definition>
+    <key>entry_meta_keywords</key>
+    <value><![CDATA[Meta Keywords:]]></value>
+  </definition>
+  <definition>
+    <key>entry_keyword</key>
+    <value><![CDATA[SEO Keyword:]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_details</key>
+    <value><![CDATA[Show Author Details:<br/><span class="help">Display author details on article page. Name will be shown by default.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_details_ap</key>
+    <value><![CDATA[Show Author Details Author Page:<br/><span class="help">Display author details on author page. Name will be shown by default.</span>]]></value>
+  </definition>
+  <definition>
+    <key>text_ascending</key>
+    <value><![CDATA[Ascending]]></value>
+  </definition>
+  <definition>
+    <key>text_descending</key>
+    <value><![CDATA[Descending]]></value>
+  </definition>
+  <definition>
+    <key>text_select_role</key>
+    <value><![CDATA[- Select Blog Role -]]></value>
+  </definition>
+  <definition>
+    <key>text_select_author</key>
+    <value><![CDATA[- Select Author -]]></value>
+  </definition>
+  <definition>
+    <key>text_select_blog</key>
+    <value><![CDATA[- Select Blog -]]></value>
+  </definition>
+  <definition>
+    <key>error_permission</key>
+    <value><![CDATA[Warning: You do not have permission to modify blog authors!]]></value>
+  </definition>
+  <definition>
+    <key>error_firstname</key>
+    <value><![CDATA[First Name must be more than 1 character and less than 32!]]></value>
+  </definition>
+  <definition>
+    <key>error_lastname</key>
+    <value><![CDATA[Last Name must be more than 1 character and less than 32!]]></value>
+  </definition>
+  <definition>
+    <key>error_email</key>
+    <value><![CDATA[Email Address does not appear to be valid!]]></value>
+  </definition>
+  <definition>
+    <key>error_role_id</key>
+    <value><![CDATA[You must select a role for this author!]]></value>
+  </definition>
+  <definition>
+    <key>error_required_data</key>
+    <value><![CDATA[Required Data has not been entered. Check for field errors!]]></value>
+  </definition>
+  <definition>
+    <key>text_top_level</key>
+    <value><![CDATA[Top Level]]></value>
+  </definition>
+  <definition>
+    <key>text_any</key>
+    <value><![CDATA[any]]></value>
+  </definition>
+  <definition>
+    <key>tab_form</key>
+    <value><![CDATA[ Edit ]]></value>
+  </definition>
+  <definition>
+    <key>tab_layout</key>
+    <value><![CDATA[ Layout ]]></value>
+  </definition>
+  <definition>
+    <key>tab_general</key>
+    <value><![CDATA[General]]></value>
+  </definition>
+  <definition>
+	<key>tab_entries</key>
+	<value><![CDATA[Articles]]></value>
+  </definition>
+</definitions>

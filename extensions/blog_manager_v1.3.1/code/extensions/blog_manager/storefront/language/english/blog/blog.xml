@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<definitions>
+  <definition>
+	<key>text_blog_not_setup</key>
+	<value><![CDATA[Blog Not Created]]></value>
+  </definition>
+  <definition>
+	<key>text_blog_no_entries</key>
+	<value><![CDATA[No Articles Yet. Please check back soon.]]></value>
+  </definition>
+  <definition>
+	<key>text_blog_no_archives</key>
+	<value><![CDATA[There are no archives for this month.]]></value>
+  </definition>
+  <definition>
+	<key>text_future_blog</key>
+	<value><![CDATA[Future Blog Site]]></value>
+  </definition>
+  <definition>
+    <key>search_heading_title</key>
+    <value><![CDATA[Search Results]]></value>
+  </definition>
+  <definition>
+    <key>text_search_results_for</key>
+    <value><![CDATA[Search Results For:]]></value>
+  </definition>
+  <definition>
+    <key>text_more_words</key>
+    <value><![CDATA[Try searching with words greater than three characters]]></value>
+  </definition>
+  <definition>
+    <key>no_articles_found</key>
+    <value><![CDATA[No Articles Found With Your Search Terms]]></value>
+  </definition>
+  <definition>
+    <key>text_blog_search</key>
+    <value><![CDATA[Search The Blog]]></value>
+  </definition>
+  <definition>
+	<key>blog_category_title</key>
+	<value><![CDATA[Blog Categories]]></value>
+  </definition>
+  <definition>
+	<key>blog_archive_title</key>
+	<value><![CDATA[Blog Archive]]></value>
+  </definition>
+  <definition>
+	<key>text_archive</key>
+	<value><![CDATA[Archive]]></value>+
+  </definition>
+  <definition>
+	<key>text_author</key>
+	<value><![CDATA[Author:]]></value>+
+  </definition>
+  <definition>
+	<key>text_more_from_author</key>
+	<value><![CDATA[Other Articles By This Author]]></value>+
+  </definition>
+  <definition>
+	<key>text_store</key>
+	<value><![CDATA[Store]]></value>
+  </definition>
+  <definition>
+	<key>blog_home</key>
+	<value><![CDATA[Blog Home]]></value>
+  </definition>
+  <definition>
+	<key>text_category_title</key>
+	<value><![CDATA[Category: ]]></value>
+  </definition>
+  <definition>
+	<key>text_entered</key>
+	<value><![CDATA[Posted]]></value>
+  </definition>
+  <definition>
+	<key>text_by</key>
+	<value><![CDATA[By]]></value>
+  </definition>
+  <definition>
+	<key>text_on</key>
+	<value><![CDATA[On]]></value>
+  </definition>
+  <definition>
+	<key>text_in_response</key>
+	<value><![CDATA[In Response To:]]></value>
+  </definition>
+  <definition>
+	<key>date_format_release</key>
+	<value><![CDATA[m/d/Y]]></value>
+  </definition>
+  <definition>
+	<key>date_format_comment</key>
+	<value><![CDATA[F j, Y \a\t g:i a]]></value>
+  </definition>
+  <definition>
+	<key>date_format_feed</key>
+	<value><![CDATA[D, d M Y H:i:s +0000]]></value>
+  </definition>
+  <definition>
+	<key>date_format_atom</key>
+	<value><![CDATA[Y-m-d\TH:i:s\Z]]></value>
+  </definition>
+  <definition>
+	<key>text_read_more</key>
+	<value><![CDATA[Read More]]></value>
+  </definition>
+  <definition>
+	<key>text_comments</key>
+	<value><![CDATA[Comments]]></value>
+  </definition>
+  <definition>
+	<key>text_join_conversation</key>
+	<value><![CDATA[Join the Conversation]]></value>
+  </definition>
+  <definition>
+	<key>text_be_first</key>
+	<value><![CDATA[Be The First To Comment]]></value>
+  </definition>
+  <definition>
+	<key>text_comments_off</key>
+	<value><![CDATA[Comments Off]]></value>
+  </definition>
+  <definition>
+	<key>text_reply</key>
+	<value><![CDATA[Reply]]></value>
+  </definition>
+  <definition>
+	<key>text_comment</key>
+	<value><![CDATA[Comment]]></value>
+  </definition>
+  <definition>
+	<key>text_blog_entry_not_found</key>
+	<value><![CDATA[Article Not Found]]></value>
+  </definition>
+  <definition>
+	<key>text_posted_categories</key>
+	<value><![CDATA[Posted In:]]></value>
+  </definition>
+  <definition>
+	<key>text_about_author</key>
+	<value><![CDATA[About The Author:]]></value>
+  </definition>
+  <definition>
+	<key>text_next</key>
+	<value><![CDATA[Next]]></value>
+  </definition>
+  <definition>
+	<key>text_website</key>
+	<value><![CDATA[Website:]]></value>
+  </definition>
+  <definition>
+	<key>text_prev</key>
+	<value><![CDATA[Previous]]></value>
+  </definition>
+  <definition>
+	<key>text_says</key>
+	<value><![CDATA[says:]]></value>
+  </definition>
+  <definition>
+	<key>text_comment_id</key>
+	<value><![CDATA[Comment ID:]]></value>
+  </definition>
+  <definition>
+	<key>entry_username</key>
+	<value><![CDATA[Username/Name: (required)]]></value>
+  </definition>
+  <definition>
+	<key>entry_site_url</key>
+	<value><![CDATA[Website or Blog Address: (optional)]]></value>
+  </definition>
+  <definition>
+	<key>entry_email</key>
+	<value><![CDATA[Email Address: (required but never shared)]]></value>
+  </definition>
+  <definition>
+	<key>entry_comment_detail</key>
+	<value><![CDATA[Your Thoughts: (required]]></value>
+  </definition>
+  <definition>
+	<key>text_form_reply_title</key>
+	<value><![CDATA[Leave A Reply]]></value>
+  </definition>
+  <definition>
+	<key>text_form_reply_title</key>
+	<value><![CDATA[Share Your Thoughts]]></value>
+  </definition>
+  <definition>
+	<key>text_submit_comment</key>
+	<value><![CDATA[Submit Comment]]></value>
+  </definition>
+  <definition>
+	<key>text_cancel</key>
+	<value><![CDATA[Cancel]]></value>
+  </definition>
+  <definition>
+	<key>text_views</key>
+	<value><![CDATA[Views]]></value>
+  </definition>
+  <definition>
+	<key>text_viewed</key>
+	<value><![CDATA[Viewed]]></value>
+  </definition>
+  <definition>
+	<key>text_times</key>
+	<value><![CDATA[Times.]]></value>
+  </definition>
+  <definition>
+	<key>button_make_comment</key>
+	<value><![CDATA[Leave A Comment]]></value>
+  </definition>
+  <definition>
+	<key>text_comment_form_title</key>
+	<value><![CDATA[Leave A Comment]]></value>
+  </definition>
+  <definition>
+	<key>button_go_login</key>
+	<value><![CDATA[Go To Login Form]]></value>
+  </definition>
+  <definition>
+	<key>text_must_login</key>
+	<value><![CDATA[You must be logged in first]]></value>
+  </definition>
+  <definition>
+	<key>text_copyright_title</key>
+	<value><![CDATA[Copyright Information:]]></value>
+  </definition>
+  <definition>
+	<key>error_username</key>
+	<value><![CDATA[You must enter a name]]></value>
+  </definition>
+  <definition>
+	<key>error_valid_username</key>
+	<value><![CDATA[Your name appears to be invalid]]></value>
+  </definition>
+  <definition>
+	<key>error_email</key>
+	<value><![CDATA[You must enter a valid email adddress]]></value>
+  </definition>
+  <definition>
+	<key>error_site_url</key>
+	<value><![CDATA[Your website url does not appear to be valid]]></value>
+  </definition>
+  <definition>
+	<key>error_comment_detail</key>
+	<value><![CDATA[You must have something to say...]]></value>
+  </definition>
+  <definition>
+	<key>error_required_data</key>
+	<value><![CDATA[Required input appears to be missing or invalid]]></value>
+  </definition>
+  <definition>
+	<key>error_not_logged_in</key>
+	<value><![CDATA[You must be logged in to make a comment.]]></value>
+  </definition>
+  <definition>
+	<key>error_post_data</key>
+	<value><![CDATA[There was a problem with your post and it was not accepted.]]></value>
+  </definition>
+  <definition>
+	<key>success_approved</key>
+	<value><![CDATA[Thank you for your comment.]]></value>
+  </definition>
+  <definition>
+	<key>success_not_approved</key>
+	<value><![CDATA[Thank you for your comment. It will be posted once reviewed.]]></value>
+  </definition>
+  <definition>
+    <key>text_mail_subject</key>
+    <value><![CDATA[%s - A Comment Has Been Posted]]></value>
+  </definition>
+  <definition>
+    <key>text_notification_all</key>
+    <value><![CDATA[Notify me by email on new comments to this article]]></value>
+  </definition>
+  <definition>
+    <key>text_notification_reply</key>
+    <value><![CDATA[Notify me by email on replies to my comment]]></value>
+  </definition>
+  <definition>
+    <key>text_mail_approve_subject</key>
+    <value><![CDATA[%s - Comment To Be Approved]]></value>
+  </definition>
+  <definition>
+    <key>text_new_comment</key>
+    <value><![CDATA[A new comment has been made to "%s"]]></value>
+  </definition>
+  <definition>
+    <key>text_new_reply</key>
+    <value><![CDATA[A reply has been made to comment by %s comment to "%s"]]></value>
+  </definition>
+  <definition>
+    <key>text_approval_status</key>
+    <value><![CDATA[Approval Status:]]></value>
+  </definition>
+  <definition>
+    <key>text_approved</key>
+    <value><![CDATA[Approved]]></value>
+  </definition>
+  <definition>
+    <key>text_not_approved</key>
+    <value><![CDATA[Not Approved]]></value>
+  </definition>
+  <definition>
+    <key>text_cancel_notification</key>
+    <value><![CDATA[To cancel notifications, log into your account and edit in user settings.]]></value>
+  </definition>
+  <definition>
+    <key>text_subject_new_reply</key>
+    <value><![CDATA[%s - A reply has been made to your comment]]></value>
+  </definition>
+  <definition>
+    <key>text_new_user_reply</key>
+    <value><![CDATA[A reply has been made to your comment to "%s"]]></value>
+  </definition>
+  <definition>
+    <key>text_blog_settings</key>
+    <value><![CDATA[Blog User Settings]]></value>
+  </definition>
+  <definition>
+    <key>text_register_heading</key>
+    <value><![CDATA[Register]]></value>
+  </definition>
+</definitions>

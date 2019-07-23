@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions>
+  <definition>
+    <key>custom_product_show_name</key>
+    <value><![CDATA[Product Show]]></value>
+  </definition>
+  <definition>
+    <key>custom_product_show_note</key>
+    <value><![CDATA[]]></value>
+  </definition>
+</definitions>

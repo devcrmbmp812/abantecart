@@ -1,0 +1,810 @@
+<?xml version="1.0"?>
+<definitions>
+  <definition>
+	<key>blog_manager_name</key>
+	<value><![CDATA[Blog Manager]]></value>
+  </definition>
+  <definition>
+	<key>blog_manage_name</key>
+	<value><![CDATA[Blog Settings]]></value>
+  </definition>
+  <definition>
+	<key>blog_entry_name</key>
+	<value><![CDATA[Articles]]></value>
+  </definition>
+  <definition>
+	<key>blog_category_name</key>
+	<value><![CDATA[Categories]]></value>
+  </definition>
+  <definition>
+	<key>blogs_name</key>
+	<value><![CDATA[Blogs]]></value>
+  </definition>
+  <definition>
+	<key>blog_authors_name</key>
+	<value><![CDATA[Blog Author]]></value>
+  </definition>
+  <definition>
+	<key>blog_comment_name</key>
+	<value><![CDATA[Blog Comments]]></value>
+  </definition>
+  <definition>
+	<key>blog_user_name</key>
+	<value><![CDATA[Blog User]]></value>
+  </definition>
+  <definition>
+	<key>blog_entries_name</key>
+	<value><![CDATA[Blog Articles]]></value>
+  </definition>
+  <definition>
+	<key>blog_users_name</key>
+	<value><![CDATA[Blog Users]]></value>
+  </definition>
+  <definition>
+    <key>heading_title</key>
+    <value><![CDATA[Blog Manager]]></value>
+  </definition>
+  <definition>
+    <key>insert_title</key>
+    <value><![CDATA[Add New Blog]]></value>
+  </definition>
+  <definition>
+    <key>update_title</key>
+    <value><![CDATA[Update Blog]]></value>
+  </definition>
+  <definition>
+    <key>update_layout</key>
+    <value><![CDATA[Blog Layout]]></value>
+  </definition>
+  <definition>
+    <key>social_title</key>
+    <value><![CDATA[Social Buttons]]></value>
+  </definition>
+  <definition>
+    <key>text_insert_success</key>
+    <value><![CDATA[Success: You have created your blog!]]></value>
+  </definition>
+  <definition>
+    <key>text_success</key>
+    <value><![CDATA[Success: You have modified your blog!]]></value>
+  </definition>
+  <definition>
+    <key>text_success_layout</key>
+    <value><![CDATA[Success: You have modified blog page layout.]]></value>
+  </definition>
+  <definition>
+    <key>text_hidden</key>
+    <value><![CDATA[Hidden]]></value>
+  </definition>
+  <definition>
+    <key>text_default</key>
+    <value><![CDATA[Default]]></value>
+  </definition>
+  <definition>
+    <key>entry_title</key>
+    <value><![CDATA[Blog Title:]]></value>
+  </definition>
+  <definition>
+    <key>entry_description</key>
+    <value><![CDATA[Description:<br /><span class="help">Used for RSS feed.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_status</key>
+    <value><![CDATA[Status:]]></value>
+  </definition>
+  <definition>
+    <key>entry_message_top</key>
+    <value><![CDATA[Top Message:<br/><span class="help">Appears at the top of the main page only.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_message_bottom</key>
+    <value><![CDATA[Bottom Message:<br/><span class="help">Appears at the bottom of the main page only.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_url</key>
+    <value><![CDATA[Blog URL:<br/><span class="help">If your blog domain/url is different than your store, enter it here. Example: http://blog.yourdomain.com or http://www.otherdomain.com. Note: See How To instructions.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_use_store_url</key>
+    <value><![CDATA[Blog Domain Name:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_ssl</key>
+    <value><![CDATA[Use SSL:<br/><span class="help">To use SSL, make sure your secure certificate works with your blog domain name</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_ssl_url</key>
+    <value><![CDATA[Blog Secure URL:<br/><span class="help">If your secure blog domain/url is different than your secure store url, enter it here. Example: https://blog.yourdomain.com or https://www.otherdomain.com.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_meta_description</key>
+    <value><![CDATA[Meta Tag Description:]]></value>
+  </definition>
+  <definition>
+    <key>entry_meta_keywords</key>
+    <value><![CDATA[Meta Keywords:]]></value>
+  </definition>
+  <definition>
+    <key>entry_disclaimer</key>
+    <value><![CDATA[Disclaimer:<br /><span class="help">Appears at the bottom of every page</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_owner</key>
+    <value><![CDATA[Blog Owner:]]></value>
+  </definition>
+  <definition>
+    <key>entry_owner_email</key>
+    <value><![CDATA[Blog Owner Email:]]></value>
+  </definition>
+  <definition>
+    <key>entry_approve_comments</key>
+    <value><![CDATA[Moderate Comments:<br/><span class="help">Global setting. If set to ON, all comments will require approval. You can allow individual users to post comments without approval by editing the users setting.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_new_user_reg</key>
+    <value><![CDATA[Require New Users To Register<br/><span class="help">Require new users to register before posting comments.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_approve_user</key>
+    <value><![CDATA[Manually Approve New Users:<br /><span class="help">Set to ON new users will not be able to login until their account has been manually approved. Set to OFF, new users will be automatically approved unless email activation is set to on.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_user_email_activation</key>
+    <value><![CDATA[Email Activation for New Users:<br /><span class="help">Don't allow new users to login until their account has been confirmed by activation link sent via email. For this to work, make sure Approve New Users is set to OFF.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_site_url</key>
+    <value><![CDATA[Show Website URL On Comment Form:<br /><span class="help">Display website url/blog url input on comment form</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_notification_all</key>
+    <value><![CDATA[Allow Notification On All Comments:<br /><span class="help">Provide option for users to receive email notification on all comments submitted to an article. Notices are not sent until comment is approved.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_notification_on_reply</key>
+    <value><![CDATA[Allow Notification On Comment Replies:<br /><span class="help">Provide option for users to receive email notification on replies to their comment. Notices are not sent until comment is approved.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_access</key>
+    <value><![CDATA[Blog Access:]]></value>
+  </definition>
+  <definition>
+    <key>entry_login_data</key>
+    <value><![CDATA[Login Credentials:]]></value>
+  </definition>
+  <definition>
+    <key>entry_customer_groups</key>
+    <value><![CDATA[Customer Groups:]]></value>
+  </definition>
+  <definition>
+    <key>entry_autofill_form</key>
+    <value><![CDATA[Auto-fill Comment Form:<br /><span class="help">Comment and Reply form will be auto-filled with user data if the user is logged on.</span>]]></value>
+  </definition>
+  <definition>
+    <key>text_select_customer_groups</key>
+    <value><![CDATA[Select Customer Groups]]></value>
+  </definition>
+  <definition>
+    <key>text_use_store_url</key>
+    <value><![CDATA[Use Same Domain/URL as Store]]></value>
+  </definition>
+  <definition>
+    <key>text_use_new_url</key>
+    <value><![CDATA[Use A Different Domain/URL]]></value>
+  </definition>
+  <definition>
+    <key>text_allow_all</key>
+    <value><![CDATA[Allow anyone to post comments]]></value>
+  </definition>
+  <definition>
+    <key>text_restrict_access</key>
+    <value><![CDATA[Only allow registered users to post comments]]></value>
+  </definition>
+  <definition>
+    <key>text_use_customer</key>
+    <value><![CDATA[Use customer information]]></value>
+  </definition>
+  <definition>
+    <key>text_seperate_login</key>
+    <value><![CDATA[Use separate login credentials]]></value>
+  </definition>
+  <definition>
+    <key>entry_share</key>
+    <value><![CDATA[Show Social Tags:]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_month</key>
+    <value><![CDATA[Summary Articles:<br /><span class="help">Articles to show in main and category summary pages. Remainder will be available on archive pages.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_dt</key>
+    <value><![CDATA[Default Date/Time:<br /><span class="help">Article and comment date/times will be shown in the time zone selected unless users specify their own timezone. Store time zone is the zone set in the stores init.php file. Blog feeds will be in UTC/GMT timezone.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_omit_uncatergorized</key>
+    <value><![CDATA[Omit Uncategorized Category:<br /><span class="help">Do not show Uncategorized category in category listings</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_sub_categories</key>
+    <value><![CDATA[Show Sub-Categories:<br /><span class="help">Show sub-category list on category page.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_related_prices</key>
+    <value><![CDATA[Show Related Product Buy Options:<br /><span class="help">Show product price and Add to Cart button on related products.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_entry_view_count</key>
+    <value><![CDATA[Show Article View Count:<br/><span class="help">View count shown on summary and article page.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_entries_per_main_page</key>
+    <value><![CDATA[# of Articles Shown On Listing Pages:]]></value>
+  </definition>
+  <definition>
+    <key>entry_entries_per_rss_feed</key>
+    <value><![CDATA[# of Articles Shown On RSS Feeds:]]></value>
+  </definition>
+  <definition>
+    <key>entry_feed_type</key>
+    <value><![CDATA[Default Feed Type:]]></value>
+  </definition>
+  <definition>
+    <key>entry_feed_show_thumb</key>
+    <value><![CDATA[Show Article Thumbnail In Feed:]]></value>
+  </definition>
+  <definition>
+    <key>entry_word_count_main</key>
+    <value><![CDATA[Article Description Word Count:<br/><span class="help">Number of words shown for each article listing.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_word_count_feed</key>
+    <value><![CDATA[Data Feed Description Word Count:<br/><span class="help">Number of words shown for each article and comment listing in data feeds.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_entry_display_order</key>
+    <value><![CDATA[Article Display Order:]]></value>
+  </definition>
+  <definition>
+    <key>entry_comment_display_order</key>
+    <value><![CDATA[Comment Display Order:]]></value>
+  </definition>
+  <definition>
+    <key>entry_req_cred</key>
+    <value><![CDATA[Credentials Required For Comments:<br /><span class="help">User is required to enter name and email address when entering a comment. Data autofilled if users are requried to login in.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_default_blog_category</key>
+    <value><![CDATA[Default Post Category:]]></value>
+  </definition>
+  <definition>
+    <key>entry_show_comment_policy</key>
+    <value><![CDATA[Show Comment Policy:]]></value>
+  </definition>
+  <definition>
+    <key>entry_comment_policy</key>
+    <value><![CDATA[Comment Policy:<br /><span class="help">Appears directly above the comment submit button.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_sanitize</key>
+    <value><![CDATA[Sanitize HTML:<br /><span class="help">Recommended. Clears out unwanted tags (except those listed below) to avoid xxs attacks, code injections and spam.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_whitelist_tags</key>
+    <value><![CDATA[Acceptable HTML Tags:<br /><span class="help">List of acceptable html tags in blog post separated by comma. Example: b, a, strong, p, h2, etc. Recommend testing to be sure you get the desired results.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_bad_words</key>
+    <value><![CDATA[Bad Words:<br /><span class="help">List of unacceptable words in blog posts separated by comma. Words will be converted to symbols.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_filter_bad_words</key>
+    <value><![CDATA[Filter Bad Words:]]></value>
+  </definition>
+  <definition>
+    <key>entry_email_all</key>
+    <value><![CDATA[Send Email On All Comments:<br /><span class="help">An email will be sent to the blog owner when a comment is made.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_email_to_be_approved</key>
+    <value><![CDATA[Send Email On Comment To Approve:<br /><span class="help">An email will be sent to the blog owner only when a comment needs to be approved.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_entry_image_width</key>
+    <value><![CDATA[Article Listing Image Max Width:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_entry_image_height</key>
+    <value><![CDATA[Article Listing Image Max Height:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_product_image_width</key>
+    <value><![CDATA[Product Listing Image Max Width:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_product_image_height</key>
+    <value><![CDATA[Product Listing Image Max Height:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_user_image_width</key>
+    <value><![CDATA[Author/User Image Max Width:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_user_image_height</key>
+    <value><![CDATA[Author/User Image Max Height:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_category_image_width</key>
+    <value><![CDATA[Category Image Max Width:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_category_image_height</key>
+    <value><![CDATA[Category Image Max Height:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_feed_image_width</key>
+    <value><![CDATA[Feed Thumbnail Max Width:]]></value>
+  </definition>
+  <definition>
+    <key>entry_blog_feed_image_height</key>
+    <value><![CDATA[Feed Thumbnail Max Height:]]></value>
+  </definition>
+  <definition>
+    <key>entry_sort_order</key>
+    <value><![CDATA[Sort Order:]]></value>
+  </definition>
+  <definition>
+    <key>entry_author_list_block_status</key>
+    <value><![CDATA[Status:]]></value>
+  </definition>
+  <definition>
+    <key>entry_author_list_block_min</key>
+    <value><![CDATA[Minimum:<br /><span class="help">Minimum amount before block will show. Greater than 0.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_author_list_block_limit</key>
+    <value><![CDATA[Limit:<br /><span class="help">The amount of listings before MORE link</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_author_list_block_max</key>
+    <value><![CDATA[Maximum Amount:<br /><span class="help">Maximum listings shown</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_category_block_status</key>
+    <value><![CDATA[Status:]]></value>
+  </definition>
+  <definition>
+    <key>entry_category_block_min</key>
+    <value><![CDATA[Minimum:<br /><span class="help">Minimum amount before block will show. Greater than 0.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_category_block_limit</key>
+    <value><![CDATA[Limit:<br /><span class="help">The amount of listings before MORE link</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_category_block_max</key>
+    <value><![CDATA[Maximum Amount:<br /><span class="help">Maximum listings shown</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_latest_block_status</key>
+    <value><![CDATA[Status:]]></value>
+  </definition>
+  <definition>
+    <key>entry_latest_block_min</key>
+    <value><![CDATA[Minimum:<br /><span class="help">Minimum amount before block will show. Greater than 0.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_latest_block_limit</key>
+    <value><![CDATA[Limit:<br /><span class="help">The amount of listings before MORE link</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_latest_block_max</key>
+    <value><![CDATA[Maximum Amount:<br /><span class="help">Maximum listings shown]]></value>
+  </definition>
+  <definition>
+    <key>entry_archive_block_status</key>
+    <value><![CDATA[Status:]]></value>
+  </definition>
+  <definition>
+    <key>entry_archive_block_min</key>
+    <value><![CDATA[Minimum:<br /><span class="help">Minimum amount before block will show. Greater than 0.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_archive_block_limit</key>
+    <value><![CDATA[Limit:<br /><span class="help">The amount of listings before MORE link</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_archive_block_max</key>
+    <value><![CDATA[Maximum Amount:<br /><span class="help">Maximum listings shown</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_popular_block_status</key>
+    <value><![CDATA[Status:]]></value>
+  </definition>
+  <definition>
+    <key>entry_popular_block_min</key>
+    <value><![CDATA[Minimum:<br /><span class="help">Minimum amount before block will show. Greater than 0.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_popular_block_limit</key>
+    <value><![CDATA[Limit:<br /><span class="help">The amount of listings before MORE link</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_popular_block_max</key>
+    <value><![CDATA[Maximum Amount:<br /><span class="help">Maximum listings shown</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_active_block_status</key>
+    <value><![CDATA[Status:]]></value>
+  </definition>
+  <definition>
+    <key>entry_active_block_min</key>
+    <value><![CDATA[Minimum:<br /><span class="help">Minimum amount before block will show. Greater than 0.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_active_block_limit</key>
+    <value><![CDATA[Limit:<br /><span class="help">The amount of listings before MORE link</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_active_block_max</key>
+    <value><![CDATA[Maximum Amount:<br /><span class="help">Maximum listings shown</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_top_menu_block_status</key>
+    <value><![CDATA[Status:]]></value>
+  </definition>
+  <definition>
+    <key>entry_store_top_menu</key>
+    <value><![CDATA[Show Link To Store In Top Menu:]]></value>
+  </definition>
+  <definition>
+    <key>entry_author_list_top_menu</key>
+    <value><![CDATA[Show Authors In Top Menu:<br /><span class="help">Only applies if author block is active.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_category_top_menu</key>
+    <value><![CDATA[Show Categories In Top Menu:<br /><span class="help">Only applies if category block is active.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_archive_top_menu</key>
+    <value><![CDATA[Show Archive In Top Menu:<br /><span class="help">Only applies if archive block is active.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_popular_top_menu</key>
+    <value><![CDATA[Show Popular In Top Menu:<br /><span class="help">Only applies if popular block is active.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_active_top_menu</key>
+    <value><![CDATA[Show Active In Top Menu:<br /><span class="help">Only applies if active block is active.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_feed_top_menu</key>
+    <value><![CDATA[Show Feed Link In Top Menu:<br/><span class="help">Shows all available feed options.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_login_top_menu</key>
+    <value><![CDATA[Show Blog Login In Top Menu:<br/><span class="help">Only applies if blog access is restricted.</span>]]></value>
+  </definition>
+  <definition>
+    <key>entry_search_top_menu</key>
+    <value><![CDATA[Show Search Link In Top Menu:]]></value>
+  </definition>
+  <definition>
+    <key>text_summary_page</key>
+    <value><![CDATA[Summary Pages Only]]></value>
+  </definition>
+  <definition>
+    <key>text_entry_page</key>
+    <value><![CDATA[Article Page Only]]></value>
+  </definition>
+  <definition>
+    <key>text_no_display</key>
+    <value><![CDATA[None]]></value>
+  </definition>
+  <definition>
+    <key>text_both_summary_entry</key>
+    <value><![CDATA[Both Summary and Article Pages]]></value>
+  </definition>
+  <definition>
+    <key>text_show_all</key>
+    <value><![CDATA[Show All Articles]]></value>
+  </definition>
+  <definition>
+    <key>text_current_month</key>
+    <value><![CDATA[Show Current Month]]></value>
+  </definition>
+  <definition>
+    <key>text_current_month_plus_one</key>
+    <value><![CDATA[Show Current Month Plus Previous Month]]></value>
+  </definition>
+  <definition>
+    <key>text_current_month_plus_two</key>
+    <value><![CDATA[Show Current Month Plus Two Previous Months]]></value>
+  </definition>
+  <definition>
+    <key>text_current_month_plus_three</key>
+    <value><![CDATA[Show Current Month Plus Three Previous Months]]></value>
+  </definition>
+  <definition>
+    <key>text_ascending</key>
+    <value><![CDATA[Ascending]]></value>
+  </definition>
+  <definition>
+    <key>text_descending</key>
+    <value><![CDATA[Descending]]></value>
+  </definition>
+  <definition>
+    <key>text_new_first</key>
+    <value><![CDATA[Newest First]]></value>
+  </definition>
+  <definition>
+    <key>text_old_first</key>
+    <value><![CDATA[Oldest First]]></value>
+  </definition>
+  <definition>
+    <key>text_buttons</key>
+    <value><![CDATA[Buttons:]]></value>
+  </definition>
+  <definition>
+    <key>error_permission</key>
+    <value><![CDATA[Warning: You do not have permission to modify blogs!]]></value>
+  </definition>
+  <definition>
+    <key>error_title</key>
+    <value><![CDATA[You must supply a title for your blog!]]></value>
+  </definition>
+  <definition>
+    <key>error_name</key>
+    <value><![CDATA[Blog Name must be between 2 and 64 characters!]]></value>
+  </definition>
+  <definition>
+    <key>error_description</key>
+    <value><![CDATA[You must supply a description greater than 3 characters.]]></value>
+  </definition>
+  <definition>
+    <key>error_content</key>
+    <value><![CDATA[Blog content must be more than 1 characters!]]></value>
+  </definition>
+  <definition>
+    <key>error_owner</key>
+    <value><![CDATA[You must enter an owner name!]]></value>
+  </definition>
+  <definition>
+    <key>error_owner_email</key>
+    <value><![CDATA[You must enter a valid email address!]]></value>
+  </definition>
+  <definition>
+    <key>error_blog_url</key>
+    <value><![CDATA[You must enter a valid url for your blog!]]></value>
+  </definition>
+  <definition>
+    <key>error_blog_ssl_url</key>
+    <value><![CDATA[You must enter a valid ssl url for your blog!]]></value>
+  </definition>
+  <definition>
+    <key>error_seo_url</key>
+    <value><![CDATA[SEO URL must be more than 1 characters!]]></value>
+  </definition>  
+  <definition>
+    <key>error_required_data</key>
+    <value><![CDATA[Required Data has not been entered. Check for field errors!]]></value>
+  </definition>
+  <definition>
+    <key>text_system_dt</key>
+    <value><![CDATA[Store Timezone]]></value>
+  </definition>
+  <definition>
+    <key>text_gmt_dt</key>
+    <value><![CDATA[UTC/GMT]]></value>
+  </definition>
+  <definition>
+    <key>text_select_blog_category</key>
+    <value><![CDATA[- Select Blog Category -]]></value>
+  </definition>
+  <definition>
+    <key>text_top_level</key>
+    <value><![CDATA[Top Level]]></value>
+  </definition>
+  <definition>
+    <key>text_any</key>
+    <value><![CDATA[any]]></value>
+  </definition>
+  <definition>
+    <key>text_insert_button</key>
+    <value><![CDATA[Add Social Button]]></value>
+  </definition>
+  <definition>
+    <key>text_edit_button</key>
+    <value><![CDATA[Edit Social Button]]></value>
+  </definition>
+  <definition>
+    <key>button_edit</key>
+    <value><![CDATA[Edit]]></value>
+  </definition>
+  <definition>
+    <key>button_remove</key>
+    <value><![CDATA[Delete]]></value>
+  </definition>
+  <definition>
+    <key>tab_form</key>
+    <value><![CDATA[Details]]></value>
+  </definition>
+  <definition>
+    <key>tab_users</key>
+    <value><![CDATA[User]]></value>
+  </definition>
+  <definition>
+    <key>tab_settings</key>
+    <value><![CDATA[Settings]]></value>
+  </definition>
+  <definition>
+    <key>tab_blocks</key>
+    <value><![CDATA[Block Settings]]></value>
+  </definition>
+  <definition>
+    <key>tab_comments</key>
+    <value><![CDATA[Comments]]></value>
+  </definition>
+  <definition>
+    <key>tab_layout</key>
+    <value><![CDATA[Layout]]></value>
+  </definition>
+  <definition>
+    <key>section_general</key>
+    <value><![CDATA[General]]></value>
+  </definition>
+  <definition>
+    <key>section_dashboard</key>
+    <value><![CDATA[Dashboard]]></value>
+  </definition>
+  <definition>
+    <key>section_display</key>
+    <value><![CDATA[Display]]></value>
+  </definition>
+  <definition>
+    <key>section_datafeed</key>
+    <value><![CDATA[Datafeed]]></value>
+  </definition>
+  <definition>
+    <key>section_media</key>
+    <value><![CDATA[Media]]></value>
+  </definition>
+  <definition>
+    <key>section_author_list_block</key>
+    <value><![CDATA[Author Block]]></value>
+  </definition>
+  <definition>
+    <key>section_category_block</key>
+    <value><![CDATA[Category Block]]></value>
+  </definition>
+  <definition>
+    <key>section_archive_block</key>
+    <value><![CDATA[Archive Block]]></value>
+  </definition>
+  <definition>
+    <key>section_latest_block</key>
+    <value><![CDATA[Latest Activity Block]]></value>
+  </definition>
+  <definition>
+    <key>section_top_menu</key>
+    <value><![CDATA[Top Menu Block]]></value>
+  </definition>
+  <definition>
+    <key>section_active_block</key>
+    <value><![CDATA[Most Active Block]]></value>
+  </definition>
+  <definition>
+    <key>section_popular_block</key>
+    <value><![CDATA[Most Popular Block]]></value>
+  </definition>
+  <definition>
+    <key>text_inactive</key>
+    <value><![CDATA[Inactive]]></value>
+  </definition>
+  <definition>
+    <key>text_active</key>
+    <value><![CDATA[Active]]></value>
+  </definition>
+  <definition>
+	  <key>blog_manager_note</key>
+	  <value><![CDATA[Be sure to read the Setup Instructions for critical setup information.]]></value>
+  </definition>
+  <definition>
+	  <key>setup_message</key>
+	  <value><![CDATA[You Create your new blog first.]]></value>
+  </definition>
+  <definition>
+	  <key>button_howto</key>
+	  <value><![CDATA[Setup Instructions]]></value>
+  </definition>
+  <definition>
+	  <key>button_help</key>
+	  <value><![CDATA[Blog Help]]></value>
+  </definition>
+  <definition>
+	  <key>text_blog</key>
+	  <value><![CDATA[Blog]]></value>
+  </definition>
+  <definition>
+	  <key>text_new_article</key>
+	  <value><![CDATA[New Article]]></value>
+  </definition>
+  <definition>
+	  <key>desc_blog</key>
+	  <value><![CDATA[Blog]]></value>
+  </definition>
+  <definition>
+	  <key>entry_enable_dashboard</key>
+	  <value><![CDATA[Enable Blog Dashboard]]></value>
+  </definition>
+  <definition>
+	  <key>entry_dashboard_article_count</key>
+	  <value><![CDATA[Dashboard Article Count]]></value>
+  </definition>
+  <definition>
+	  <key>entry_dashboard_comment_count</key>
+	  <value><![CDATA[Dashboard Comment Count]]></value>
+  </definition>
+  <definition>
+	  <key>text_latest_activity</key>
+	  <value><![CDATA[Latest Activity]]></value>
+  </definition>
+  <definition>
+	  <key>text_recent_articles</key>
+	  <value><![CDATA[Recent Articles]]></value>
+  </definition>
+  <definition>
+	  <key>text_recent_comments</key>
+	  <value><![CDATA[Recent Comments]]></value>
+  </definition>
+  <definition>
+	  <key>text_create_language_defintion</key>
+	  <value><![CDATA[(Set current language for category)]]></value>
+  </definition>
+  <definition>
+	  <key>section_search</key>
+	  <value><![CDATA[Search]]></value>
+  </definition>
+  <definition>
+	  <key>entry_search_type</key>
+	  <value><![CDATA[Search Type<br><span class="help">Select the option which works best for your blog. Simple search is best if you only have a few entries. As your blog grows, you may want to increase the search type. See more details in the Setup Instructions.</span>]]></value>
+  </definition>
+  <definition>
+	  <key>text_search_fields</key>
+	  <value><![CDATA[Include Fields In Search:]]></value>
+  </definition>
+  <definition>
+	  <key>entry_search_article_title</key>
+	  <value><![CDATA[Article Title]]></value>
+  </definition>
+  <definition>
+	  <key>entry_search_article_intro</key>
+	  <value><![CDATA[Article Introduction]]></value>
+  </definition>
+  <definition>
+	  <key>entry_search_article_content</key>
+	  <value><![CDATA[Article Content]]></value>
+  </definition>
+  <definition>
+	  <key>entry_search_meta_keywords</key>
+	  <value><![CDATA[Meta Keywords (Tags)]]></value>
+  </definition>
+  <definition>
+	  <key>entry_search_meta_desc</key>
+	  <value><![CDATA[Meta Description]]></value>
+  </definition>
+  <definition>
+	  <key>text_search_simple</key>
+	  <value><![CDATA[Simple Search]]></value>
+  </definition>
+  <definition>
+	  <key>text_search_full</key>
+	  <value><![CDATA[Full Text Search]]></value>
+  </definition>
+  <definition>
+	  <key>text_search_extd</key>
+	  <value><![CDATA[Extended Search]]></value>
+  </definition>
+</definitions>
+
+
+		

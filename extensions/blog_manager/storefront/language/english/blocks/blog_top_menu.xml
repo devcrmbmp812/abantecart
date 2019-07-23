@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<definitions>
+	<definition>
+		<key>blog_home</key>
+		<value><![CDATA[Blog Home]]></value>
+	</definition>
+	<definition>
+		<key>text_store</key>
+		<value><![CDATA[Store]]></value>
+	</definition>
+	<definition>
+		<key>text_subscribe</key>
+		<value><![CDATA[Subscribe]]></value>
+	</definition>
+	<definition>
+		<key>text_blog_login</key>
+		<value><![CDATA[Blog Login]]></value>
+	</definition>
+	<definition>
+		<key>text_settings</key>
+		<value><![CDATA[Blog Settings]]></value>
+	</definition>
+	<definition>
+		<key>text_username</key>
+		<value><![CDATA[Username]]></value>
+	</definition>
+	<definition>
+		<key>text_search</key>
+		<value><![CDATA[Search]]></value>
+	</definition>
+	<definition>
+		<key>text_password</key>
+		<value><![CDATA[Password]]></value>
+	</definition>
+	<definition>
+		<key>button_login</key>
+		<value><![CDATA[Login]]></value>
+	</definition>
+	<definition>
+		<key>text_search</key>
+		<value><![CDATA[Search]]></value>
+	</definition>
+</definitions>

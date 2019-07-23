@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<definitions>
+	<definition>
+		<key>jivo_chat_name</key>
+		<value><![CDATA[JivoChat Live Chat]]></value>
+	</definition>
+	<definition>
+		<key>jivo_chat_status</key>
+		<value><![CDATA[Status:]]></value>
+	</definition>
+	<definition>
+		<key>jivo_chat_note</key>
+		<value><![CDATA[Chat with visitors on your website. They'll see a chat box in the bottom right of your website. You can chat with them, they can chat with you.<br />
+		<h3>How do I get started?</h3>
+		<ul><li>Register for an free account at <a href="https://www.jivochat.com?partner_id=7183&lang=en&pricelist_id=4" target="_blank">www.jivochat.com</a></li><li>
+Activate the Abantecart plugin through the 'All Extensions' menu in adminfront</li><li>
+Copy the widget_id token provided in the JivoChat Welcome email or <a class="btnin" href="https://admin.jivosite.com?partner_id=7183&lang=en&pricelist_id=4" target="_blank">INSTALL CODE</a> box<br>
+<img src="https://lh3.googleusercontent.com/-Uio8V92pKRo/V4TzLSHrBzI/AAAAAAAAHhI/WnQPkvho25IDslg6EB870Ov-WpGwAzDjw/w1060-h572-p/jivochat_token.png" width="478" height="auto"></li><li>
+Paste the widget_id token into the plugin settings, found under Admin > Extensions > All extensions > JivoChat Live Chat</li>
+<li>Just download one of <a href="https://www.jivochat.com/apps/?partner_id=7183&lang=en&pricelist_id=4" target="_blank">native JivoChat apps</a> or <a href="https://app.jivosite.com/?partner_id=7183&lang=en&pricelist_id=4" target="_blank">Open browser Web app</a>
+<div id="footerRight">
+    <a target="_blank" href="https://www.jivochat.com/apps/?partner_id=7183&lang=en&pricelist_id=4" class="fa fa-laptop fa-lg" id="appLinkMac"> Mac</a>
+    <a target="_blank" href="https://itunes.apple.com/en/app/jivosite/id898216971" class="fa fa-mobile fa-lg" id="appLinkIOS"> iOS</a>
+    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.jivosite.mobile&hl=en" class="fa fa-android fa-lg" id="appLinkAndroid"> Android</a>
+  </div></li></ul>
+		]]></value>
+	</definition>
+	<definition>
+		<key>jivo_chat_code</key>
+		<value><![CDATA[Widget Token:<span class="help">Your unique product id. Login to https://admin.jivosite.com?partner_id=7183&lang=en&pricelist_id=4 click INSTALL CODE and grab the product token.</span>]]></value>
+	</definition>
+	<definition>
+		<key>page_a</key>
+		<value><![CDATA[Display only on product pages.]]></value>
+	</definition>
+	<definition>
+		<key>hide_mobile</key>
+		<value><![CDATA[Hide chat on mobile devices.]]></value>
+	</definition>
+	<definition>
+		<key>text_sort_order_extensions</key>
+		<value><![CDATA[Sort Order]]></value>
+	</definition>
+</definitions>

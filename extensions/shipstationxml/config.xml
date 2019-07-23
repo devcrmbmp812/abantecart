@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+  <id>shipstationxml</id>
+  <version>1.0.0</version>
+  <type>template</type>
+  <category>Ship Station</category>
+  <cartversions>
+    <item>1.2</item>
+  </cartversions>
+  <priority>10</priority>
+  <dependencies></dependencies>
+  <settings>
+    <item id="shipstationxml_status">
+      <type>checkbox</type>
+      <default_value>0</default_value>
+    </item>
+    <item id="shipstationxml_access_key" required="true">
+      <type required="true">input</type>
+      <default_value></default_value>
+    </item>
+  </settings>
+  <additional_settings><![CDATA[setting/setting&active=appearance]]></additional_settings>
+</extension>

@@ -1,0 +1,14 @@
+<h3>How do I get started</h3>
+<p>>If Ultra_search does not appear to get the benefits of ultra-search (extension name ‘Autocomplete search’) you will need to replace the default search block in your page layouts.</p>
+<ul>
+<ol>
+1.      Install the extension ultra_search.</ol><ol>
+2.      Go to Admin>Extensions>All Extensions>ultra_search - General section and set the Status to ON.</ol><ol>
+3.      Configure the search options as required. Remember to save the options.</ol><ol>
+4.      Check that Ultra_search</ol><ol>
+5.      Go to Admin>Design><a href="#admin#rt=design/layout" target="_blank">Layouts</a> and delete the default Header section search block in each layout and replace with Ultra_search block.</ol><ol>
+6.      The set-up of Ultra_search should now be complete.</ol>
+</ul>
+
+<h3>Search id</h3>
+<p>If Ultra_search does not appear to autocomplete correctly ensure the search input ID (example < input type="text" id="filter_keyword" >).</p>

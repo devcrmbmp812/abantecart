@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<definitions>
+	<definition>
+		<key>heading_title</key>
+		<value><![CDATA[Blog Search]]></value>
+	</definition>
+	<definition>
+	  <key>text_blog_search</key>
+	  <value><![CDATA[Search Blog]]></value>
+	</definition>
+	<definition>
+	  <key>button_go</key>
+	  <value><![CDATA[Go]]></value>
+	</definition>
+</definitions>

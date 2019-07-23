@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions>
+    <definition>
+        <key>ultra_search_name</key>
+        <value><![CDATA[Autocomplete search]]></value>
+    </definition>
+    <definition>
+      <key>ultra_search_note</key>
+      <value><![CDATA[Autocomplete search enables customers to quickly find and select from a pre-populated list of result as they type.]]></value>
+    </definition>
+    <definition>
+  		<key>ultra_search_images</key>
+  		<value><![CDATA[Results show images:]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_textcut</key>
+  		<value><![CDATA[Hide too long names:]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_items_limit</key>
+  		<value><![CDATA[Search result per section limit: <span class="help">Recommended 3</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_1</key>
+  		<value><![CDATA[Search block Background color: <span class="help">Color (hex) code like 022753</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_1_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>022753</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_2</key>
+  		<value><![CDATA[Main text color: <span class="help">Color (hex) code like ffffff</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_2_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>ffffff</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_3</key>
+  		<value><![CDATA[Results headings titles bg color: <span class="help">Color (hex) code like fffff8</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_8</key>
+  		<value><![CDATA[Results headings titles color: <span class="help">Color (hex) code like fffff8</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_3_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>fffff8</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_4</key>
+  		<value><![CDATA[Results dropdown background color: <span class="help">Color (hex) code like 99a9ba</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_4_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>99a9ba</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_5</key>
+  		<value><![CDATA[Results text regular color: <span class="help">Color (hex) code like 120e03</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_5_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>120e03</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_6</key>
+  		<value><![CDATA[First result bg color: <span class="help">Color (hex) code like fecc2f</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_6_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>fecc2f</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_7</key>
+  		<value><![CDATA[First result text color: <span class="help">Color (hex) code like fecc2f</span>#]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_7_validation_error</key>
+  		<value><![CDATA[Error! Please type 6 symbol hex color code like <b>fecc2f</b> ]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_colour_ignore</key>
+  		<value><![CDATA[Ignore all color settings: adaptive <span class="help">Disable to use custom colors</span>]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_new_window</key>
+  		<value><![CDATA[Open links in new window:]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_enter</key>
+  		<value><![CDATA[Open regular search page on Enter key hint:<span class="help">Results will be from regular abantecart search.</span>]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_products</key>
+  		<value><![CDATA[Search Product]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_ptags</key>
+  		<value><![CDATA[Search Product: in respect of Tags]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_pdesc</key>
+  		<value><![CDATA[Search Product: in respect of descriptions:<br /><span class="help">Slower search!</span>]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_brands</key>
+  		<value><![CDATA[Search brand names]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_categories</key>
+  		<value><![CDATA[Search Category Names]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_reviews</key>
+  		<value><![CDATA[Search in reviews <span class="help">Slower search</span>]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_pages</key>
+  		<value><![CDATA[Search in content pages <span class="help">Slower search</span>]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_all_lang</key>
+  		<value><![CDATA[Search in all languages: <span class="help">may cause duplicates if same name in all languages</span>]]></value>
+  	</definition>
+    <definition>
+  		<key>ultra_search_search_id</key>
+  		<value><![CDATA[Replace search ID block. Please do not change!: <span class="help">Default value filter_keyword , this is to replace default search input. For advanced users!</span>]]></value>
+  	</definition>
+</definitions>

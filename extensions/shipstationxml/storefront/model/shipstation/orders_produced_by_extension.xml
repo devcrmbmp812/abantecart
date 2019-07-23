@@ -1,0 +1,201 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<Orders>
+<Order>
+<OrderID>
+<![CDATA[ 1982 ]]>
+</OrderID>
+<OrderNumber>
+<![CDATA[ 1982 ]]>
+</OrderNumber>
+<OrderDate>01/19/2019 01:56 PM</OrderDate>
+<OrderStatus>
+<![CDATA[ processing ]]>
+</OrderStatus>
+<LastModified>01/19/2019 01:57 PM</LastModified>
+<OrderTotal>221.96</OrderTotal>
+<Customer>
+<CustomerCode>
+<![CDATA[ jaredspaans@gmail.com ]]>
+</CustomerCode>
+<BillTo>
+<Name>
+<![CDATA[ Jared Spaans ]]>
+</Name>
+<Company>
+<![CDATA[ ]]>
+</Company>
+<Phone>
+<![CDATA[ 3174436786 ]]>
+</Phone>
+<Email>
+<![CDATA[ jaredspaans@gmail.com ]]>
+</Email>
+</BillTo>
+<ShipTo>
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<Orders>
+<Order>
+<OrderID>
+<![CDATA[ 1982 ]]>
+</OrderID>
+<OrderNumber>
+<![CDATA[ 1982 ]]>
+</OrderNumber>
+<OrderDate>01/19/2019 01:56 PM</OrderDate>
+<OrderStatus>
+<![CDATA[ processing ]]>
+</OrderStatus>
+<LastModified>01/19/2019 01:57 PM</LastModified>
+<OrderTotal>221.96</OrderTotal>
+<Customer>
+<CustomerCode>
+<![CDATA[ jaredspaans@gmail.com ]]>
+</CustomerCode>
+<BillTo>
+<Name>
+<![CDATA[ Jared Spaans ]]>
+</Name>
+<Company>
+<![CDATA[ ]]>
+</Company>
+<Phone>
+<![CDATA[ 3174436786 ]]>
+</Phone>
+<Email>
+<![CDATA[ jaredspaans@gmail.com ]]>
+</Email>
+</BillTo>
+<ShipTo>
+<Name>
+<![CDATA[ Jared Spaans ]]>
+</Name>
+<Company>
+<![CDATA[ ]]>
+</Company>
+<Phone>
+<![CDATA[ 3174436786 ]]>
+</Phone>
+<Address1>
+<![CDATA[ 8047 Kimlough Dr ]]>
+</Address1>
+<Address2>
+<![CDATA[ ]]>
+</Address2>
+<City>
+<![CDATA[ Indianapolis ]]>
+</City>
+<State>
+<![CDATA[ IN ]]>
+</State>
+<Country>
+<![CDATA[ US ]]>
+</Country>
+<PostalCode>
+<![CDATA[ 46240 ]]>
+</PostalCode>
+</ShipTo>
+</Customer>
+<Items>
+<Item>
+<SKU>
+<![CDATA[ T11M ]]>
+</SKU>
+<Name>
+<![CDATA[
+iSpring 11G Reverse Osmosis Water Storage Tank Tank Valve & Adapter Included
+]]>
+</Name>
+<Quantity>1</Quantity>
+<UnitPrice>125.99</UnitPrice>
+</Item>
+<Item>
+<SKU>
+<![CDATA[ 0404UT (702K) ]]>
+</SKU>
+<Name>
+<![CDATA[ iSpring T-splitter with quick connect, 2 Pack ]]>
+</Name>
+<Quantity>1</Quantity>
+<UnitPrice>5.99</UnitPrice>
+</Item>
+<Item>
+<SKU>
+<![CDATA[ FWSPSL ]]>
+</SKU>
+<Name>
+<![CDATA[
+iSpring WSP Spin Down Sediment Filter Replacement Screen with Siliphos
+]]>
+</Name>
+<Quantity>1</Quantity>
+<UnitPrice>19.99</UnitPrice>
+</Item>
+<Item>
+<SKU>
+<![CDATA[ WSP-50SL+ACPF12MPT12x2 ]]>
+</SKU>
+<Name>
+<![CDATA[
+iSpring WSP-50SL - Reusable Spin Down Sediment Water Filter w/Siliphos, Alternative Water Descaler or Softener, Hot Water System Protector W/Push-Fit
+]]>
+</Name>
+<Quantity>1</Quantity>
+<UnitPrice>69.99</UnitPrice>
+</Item>
+</Items>
+<ShippingAmount>2.8421709430404E-14</ShippingAmount>
+</Order>
+</Orders>
+</ShipTo>
+</Customer>
+<Items>
+<Item>
+<SKU>
+<![CDATA[ T11M ]]>
+</SKU>
+<Name>
+<![CDATA[
+iSpring 11G Reverse Osmosis Water Storage Tank Tank Valve & Adapter Included
+]]>
+</Name>
+<Quantity>1</Quantity>
+<UnitPrice>125.99</UnitPrice>
+</Item>
+<Item>
+<SKU>
+<![CDATA[ 0404UT (702K) ]]>
+</SKU>
+<Name>
+<![CDATA[ iSpring T-splitter with quick connect, 2 Pack ]]>
+</Name>
+<Quantity>1</Quantity>
+<UnitPrice>5.99</UnitPrice>
+</Item>
+<Item>
+<SKU>
+<![CDATA[ FWSPSL ]]>
+</SKU>
+<Name>
+<![CDATA[
+iSpring WSP Spin Down Sediment Filter Replacement Screen with Siliphos
+]]>
+</Name>
+<Quantity>1</Quantity>
+<UnitPrice>19.99</UnitPrice>
+</Item>
+<Item>
+<SKU>
+<![CDATA[ WSP-50SL+ACPF12MPT12x2 ]]>
+</SKU>
+<Name>
+<![CDATA[
+iSpring WSP-50SL - Reusable Spin Down Sediment Water Filter w/Siliphos, Alternative Water Descaler or Softener, Hot Water System Protector W/Push-Fit
+]]>
+</Name>
+<Quantity>1</Quantity>
+<UnitPrice>69.99</UnitPrice>
+</Item>
+</Items>
+<ShippingAmount>2.8421709430404E-14</ShippingAmount>
+</Order>
+</Orders>

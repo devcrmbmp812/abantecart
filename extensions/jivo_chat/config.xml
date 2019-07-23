@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<extension>
+    <id>jivo_chat</id>
+    <version>1.0.2</version>
+	<type>extensions</type>
+	<category>storefront</category>
+    <cartversions>
+		<item>1.2</item>
+    </cartversions>
+    <layout></layout>
+    <priority>1</priority>
+    <settings>
+        <item id="jivo_chat_status">
+            <type>checkbox</type>
+            <default_value>0</default_value>
+        </item>
+		<item id="jivo_chat_code">
+        <type required="true">input</type>
+        <default_value>7H5JinkAU1</default_value>
+        </item>
+		<item id="page_a">
+            <type>checkbox</type>
+            <default_value>0</default_value>
+        </item>
+		<item id="hide_mobile">
+            <type>checkbox</type>
+            <default_value>0</default_value>
+        </item>
+    </settings>
+	<note>true</note>
+	<help_link><![CDATA[https://marketplace.abantecart.com/jivo_chat]]></help_link>
+    <install>
+	    <trigger>install.php</trigger>
+	</install>
+	<uninstall>
+	    <trigger>uninstall.php</trigger>
+	</uninstall>
+</extension>

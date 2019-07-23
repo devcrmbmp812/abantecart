@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+.approved_box {
+	border: 1px solid black;
+	padding: 4px;
+	border-radius: 3px;
+	background-color: #E7E6E6;
+	color: #000000;
+}
+
+.unapproved_box {
+	border: 1px solid black;
+	padding: 2px;
+	border-radius: 3px;
+	background-color: rgb(255,0,0);
+	margin-left: 2px;
+}
+
+.detail_list_head {
+	font-weight: bold;	
+	
+}
+
+.detail_list_name {}
+
+.detail_list_email {}
+
+.detail_list_url {
+	margin-left: 10px;
+}
+
+.comment_list_head {
+	font-weight: bold;
+}
+
+.comment_list_date {}
+
+.comment_list_edited {
+	font-style: italic;	
+}
+
+.comment_list_actions {
+	font-size: 12px;
+}
+.comment_list_actions a {
+	margin-right: 10px;
+}
+.comment_list_comment {}
+
+.blog_img img {
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.next_prev {
+	font-size: 12px;
+}
+
+.comment_list_item {
+	display: block;
+	margin-bottom: 5px;	
+}
+.blog_action a {
+	display: block;
+	margin-bottom: 8px;		
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<definitions>
+	<definition>
+		<key>blog_latest_title</key>
+		<value><![CDATA[Blog Activity]]></value>
+	</definition>
+	<definition>
+		<key>text_more</key>
+		<value><![CDATA[More]]></value>
+	</definition>
+	<definition>
+		<key>text_less</key>
+		<value><![CDATA[Less]]></value>
+	</definition>
+	<definition>
+		<key>text_new_entry</key>
+		<value><![CDATA[New Article]]></value>
+	</definition>
+	<definition>
+		<key>text_new_comment</key>
+		<value><![CDATA[New Comment]]></value>
+	</definition>
+	<definition>
+		<key>text_new_reply</key>
+		<value><![CDATA[New Reply]]></value>
+	</definition>
+</definitions>

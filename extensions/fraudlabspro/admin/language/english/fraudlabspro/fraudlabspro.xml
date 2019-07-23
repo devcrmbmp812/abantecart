@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<definitions>
+	<definition>
+		<key>fraudlabspro_name</key>
+		<value><![CDATA[FraudLabs Pro]]></value>
+	</definition>
+	<definition>
+		<key>text_success</key>
+		<value><![CDATA[Success: Your changes has been saved!]]></value>
+	</definition>
+	<definition>
+		<key>fraudlabspro_note</key>
+		<value><![CDATA[
+With this extension you can use FraudLabs Pro service to check your orders against fraudsters.<br> 
+<b>Sign up a free account now with 500 credits every month from <a href="https://www.fraudlabspro.com/">www.fraudlabspro.com</a></b>]]></value>
+	</definition>
+	<definition>
+		<key>fraudlabspro_status</key>
+		<value><![CDATA[Status:]]></value>
+	</definition>
+	<definition>
+		<key>fraudlabspro_api_key</key>
+		<value><![CDATA[API Key:]]></value>
+	</definition>
+	<definition>
+		<key>fraudlabspro_reject_score</key>
+		<value><![CDATA[Reject Score:<br /><span class="help">Minimum score to mark an order as fraud</span>]]></value>
+	</definition>
+	<definition>
+		<key>fraudlabspro_test_ip</key>
+		<value><![CDATA[Test IP:<br /><span class="help">Use this value for testing. Clear this value in production</span>]]></value>
+	</definition>
+	<definition>
+		<key>error_permission</key>
+		<value><![CDATA[Warning: You do not have permission to modify this settings.]]></value>
+	</definition>
+</definitions>

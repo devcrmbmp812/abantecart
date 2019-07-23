@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<definitions>
+	<definition>
+		<key>blog_archive_title</key>
+		<value><![CDATA[Blog Archive]]></value>
+	</definition>
+	<definition>
+		<key>text_more</key>
+		<value><![CDATA[More]]></value>
+	</definition>
+	<definition>
+		<key>text_less</key>
+		<value><![CDATA[Less]]></value>
+	</definition>
+</definitions>
