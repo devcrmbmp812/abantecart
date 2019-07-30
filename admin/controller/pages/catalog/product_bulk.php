@@ -108,17 +108,51 @@ class ControllerPagesCatalogProductBulk extends AController {
 	
 	public function update() {
 		$this->loadModel('catalog/product');
+		$this->loadModel('user/user');
 		$this->data['sheet'] = array();
 		$this->data['test'] = array();
 		if ($this->request->is_POST() && $this->request->post['users']) {
 			$id = $this->request->post['users'];
 			$updated_price = $this->request->post['price'];
+			$model = $this->request->post['name'];
+			$oldprice = $this->request->post['oldprice'];
 			$results = array_intersect_key($id,$updated_price);
 			foreach ($results as $result) {
-				$this->data['test'][] = array('id'=>$id[$result], 'price'=>$updated_price[$result]);
+				$this->data['test'][] = array('id'=>$id[$result], 'model' => $model[$result], 'oldprice' => $oldprice[$result], 'price'=>$updated_price[$result]);
+				$old_price_from_db = $this->model_catalog_product->getProductDiscounts($id[$result]);
+				if((float)$updated_price[$result] !== (float)(substr($old_price_from_db[0]['price'], 0, -2))) {
+					$this->data['new_updated_price'][] = $updated_price[$result];
+					$this->data['old_updated_price'][] = substr($old_price_from_db[0]['price'], 0, -2);
+					$this->data['model'] = $model[$result];
+					$this->data['user'] = $id[$result];
+				}
 				$this->model_catalog_product->updateProductDiscountByProduct($id[$result], array('price'=>$updated_price[$result]));
 			}
 		}
+
+
+		$user_info = $this->model_user_user->getUser($this->session->data['user_id'])['username'];
+
+		if(!empty($this->data['new_updated_price'])) {
+			// open the file "demosaved.csv" for writing
+			$file = fopen('demosaved.csv', 'w');
+			
+			// save the column headers
+			fputcsv($file, array('User', 'Model', 'Old Price', 'New Price'));
+			
+			$data = array();
+			foreach($this->data['new_updated_price'] as $key => $value){
+				$data[] = array($user_info, $this->data['model'],$this->data['old_updated_price'][$key], $this->data['new_updated_price'][$key]);
+			}
+			foreach ($data as $row)
+			{
+				fputcsv($file, $row);
+			}
+			
+			fclose($file);
+		}
+		// var_dump($this->data['test']);exit;
+		
 		
 		$this->loadLanguage('catalog/product_bulk');
 		$this->document->addStyle(array(
