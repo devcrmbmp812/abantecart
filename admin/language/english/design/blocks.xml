@@ -251,9 +251,5 @@
 	<definition>
 		<key>error_block_not_available</key>
 		<value><![CDATA[This block will not be displayed in selected position on a storefront!]]></value>
-	</definition>	
-	<definition>
-		<key>text_bulk_update</key>
-		<value><![CDATA[Products Bulk Update]]></value>
 	</definition>
 </definitions>

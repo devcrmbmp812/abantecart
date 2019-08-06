@@ -119,9 +119,7 @@ class ModelToolGlobalSearch extends Model {
 						FROM " . $this->db->table("products") . " a
 						LEFT JOIN " . $this->db->table("product_descriptions") . " b
 							ON (b.product_id = a.product_id AND b.language_id IN (" . (implode(",", $search_languages)) . "))
-						WHERE LOWER(a.model) like '%" . $needle . "%' OR LOWER(a.model) like '%" . $needle2 . "%'
-						AND status=1
-						";
+						WHERE LOWER(a.model) like '%" . $needle . "%' OR LOWER(a.model) like '%" . $needle2 . "%'";
 
 						//slower
 						if ($this->config->get('ultra_search_pdesc')) {
@@ -133,7 +131,7 @@ class ModelToolGlobalSearch extends Model {
 						SELECT product_id
 						FROM " . $this->db->table("product_descriptions") . " pd1
 						WHERE ( LOWER(pd1.name) like '%" . $needle . "%' OR LOWER(pd1.name) like '%" . $needle2 . "%' )
-							AND status=1 AND pd1.language_id	IN (" . (implode(",", $search_languages)) . ")";
+							AND pd1.language_id	IN (" . (implode(",", $search_languages)) . ")";
 
 
 
@@ -143,7 +141,7 @@ class ModelToolGlobalSearch extends Model {
 						LEFT JOIN " . $this->db->table("product_descriptions") . " b
 							ON (b.product_id = a.product_id AND b.language_id	IN (" . (implode(",", $search_languages)) . "))
 						WHERE ( LOWER(a.name) like '%" . $needle . "%' OR LOWER(a.name) like '%" . $needle2 . "%' )
-							AND status=1 AND a.language_id IN (" . (implode(",", $search_languages)) . ")";
+							AND a.language_id IN (" . (implode(",", $search_languages)) . ")";
 
 						if ($this->config->get('ultra_search_ptags')) {
 						$sql .= "UNION
@@ -152,7 +150,7 @@ class ModelToolGlobalSearch extends Model {
 						LEFT JOIN " . $this->db->table("product_descriptions") . " b
 							ON (b.product_id = a.product_id AND b.language_id	IN (" . (implode(",", $search_languages)) . "))
 						WHERE ( LOWER(a.tag) like '%" . $needle . "%' OR LOWER(a.tag) like '%" . $needle2 . "%' )
-							AND status=1 AND a.language_id = " . $language_id;
+							AND a.language_id = " . $language_id;
 						}
 
 				$result = $this->db->query($sql);
@@ -371,6 +369,8 @@ class ModelToolGlobalSearch extends Model {
 						LIMIT " . $offset . "," . $rows_count;
 				}
 
+				$sql = "SELECT f.* FROM (" . $sql . ") f LEFT JOIN " . $this->db->table("products") . " g 
+							ON f.product_id = g.product_id order by g.price desc";        //mary add 20190619
 
 				//$this->log->write(print_r($sql, true).' products sql ');
 

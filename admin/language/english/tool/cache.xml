@@ -112,8 +112,4 @@
 		<key>desc_install_upgrade_history</key>
 		<value><![CDATA[Clear All Install/Upgrade History]]></value>
 	</definition>
-	<definition>
-		<key>text_bulk_update</key>
-		<value><![CDATA[Products Bulk Update]]></value>
-	</definition>
 </definitions>

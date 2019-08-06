@@ -124,8 +124,4 @@
         <key>tab_image</key>
         <value><![CDATA[Images]]></value>
     </definition>	
-	<definition>
-		<key>text_bulk_update</key>
-		<value><![CDATA[Products Bulk Update]]></value>
-	</definition>
 </definitions>

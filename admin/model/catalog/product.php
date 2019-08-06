@@ -382,8 +382,7 @@ class ModelCatalogProduct extends Model{
 		}
 		$this->cache->remove('product');
 	}
-	
-	
+
 	public function updateProductDiscountByProduct($product_id, $data) {
 		$fields = array ("customer_group_id", "quantity", "priority", "price", "date_start", "date_end",);
 		if (isset($data['price'])){

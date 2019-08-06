@@ -17,7 +17,7 @@
    versions in the future. If you wish to customize AbanteCart for your
    needs please refer to http://www.AbanteCart.com for more information.
 ------------------------------------------------------------------------------*/
- 
+
 // Required PHP Version
 define('MIN_PHP_VERSION', '5.3.0');
 if (version_compare(phpversion(), MIN_PHP_VERSION, '<') == TRUE) {
@@ -31,8 +31,6 @@ if (!function_exists('simplexml_load_file')) {
 // Load Configuration
 // Real path (operating system web root) to the directory where abantecart is installed
 $root_path = dirname(__FILE__);
-// echo '<h1>'. $root_path .'</h1>'; exit;
-
 
 // Windows IIS Compatibility
 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {

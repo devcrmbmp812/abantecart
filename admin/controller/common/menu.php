@@ -68,6 +68,7 @@ class ControllerCommonMenu extends AController {
 		}
 		unset ($tmp);
 
+
 		$this->view->assign('menu_html',  renderAdminMenu(
 										$this->_buildMenuArray($this->data['menu_items']),
 										0, 

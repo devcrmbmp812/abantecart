@@ -79,10 +79,10 @@ class CitiesSlider extends React.Component {
                  >
                  <div className="slider__slide-content">
                   <?php if ($this->config->get('react_slider_alllink')) { ?><a class="myablock" href={slide.url}><?php } ?>
-                   <h3 className="slider__slide-subheading">{slide.seohiddentext || slide.keyforimage}</h3>
-                   <h2 className="slider__slide-heading">
-                     {slide.keyforimage.split('&nbsp;').map(l => <span>{l}</span>)}
-                   </h2>
+                    <h3 className="slider__slide-subheading">{slide.seohiddentext || slide.keyforimage}</h3>
+                    <h2 className="slider__slide-heading">
+                      {slide.keyforimage.split('&nbsp;').map(l => <span>{l}</span>)}
+                    </h2>
                    <?php if (!$this->config->get('react_slider_alllink')) { ?>
                    <a class="myablock" href={slide.url}><p className="slider__slide-readmore"><?php echo $this->language->get('react_slider_text_more'); ?></p></a>
                    <?php } ?>
@@ -117,8 +117,8 @@ class CitiesSlider extends React.Component {
             $image_text = mb_substr($image_text, 0, 80);
             ?>
              {
-                 keyforimage: '<?php echo html_entity_decode($content[$i]['name'], ENT_COMPAT, 'UTF-8'); ?>',
-                 seohiddentext: '<?php echo $image_text;?>',
+                 keyforimage: '<?php echo html_entity_decode($content[$i]['name'], ENT_COMPAT, 'UTF-8'); ?>', 
+                 seohiddentext: '<?php echo $image_text;?>', 
                  url: '<?php echo html_entity_decode($content[$i]['target_url'], ENT_COMPAT, 'UTF-8'); ?>',
                  img: '<?php echo html_entity_decode($content[$i]['images']['0']['main_url'], ENT_COMPAT, 'UTF-8'); ?>',
              },

@@ -1,0 +1,9 @@
+2018-07-13 9:53:03 - Task_id: 1 : step_id: 1 - Failed. 0 emails sent.
+2018-07-13 9:53:14 - Task_id: 1 : step_id: 1 - Failed. 0 emails sent.
+2018-07-13 9:53:24 - Task_id: 1 : step_id: 1 - Failed. 0 emails sent.
+2018-07-13 9:53:34 - Task_id: 1 : step_id: 1 - Failed. 0 emails sent.
+2018-07-13 9:57:46 - Task_id: 2 : step_id: 2 - Failed. 0 emails sent.
+2018-07-13 9:57:56 - Task_id: 2 : step_id: 2 - Failed. 0 emails sent.
+2018-07-13 9:58:06 - Task_id: 2 : step_id: 2 - Failed. 0 emails sent.
+2018-07-13 9:58:17 - Task_id: 2 : step_id: 2 - Failed. 0 emails sent.
+2018-07-13 9:59:11 - Task_id: 3 : step_id: 3. 2 emails sent.

@@ -3,7 +3,8 @@ window.addEventListener("load", dynWidth);
 window.addEventListener("resize", dynWidth);
 //~ dynWidth();
 function dynWidth() {
-	chooswidth = window.innerWidth - 1010;
+	//~ chooswidth = window.innerWidth - 1010;
+	chooswidth = window.innerWidth - 1060;
 	if (window.innerWidth <= 1200) {chooswidth = window.innerWidth - 790;}
 	if (window.innerWidth <= 1040) {chooswidth = window.innerWidth - 780;}
 	if (window.innerWidth <= 1000) {chooswidth = window.innerWidth - 710;}

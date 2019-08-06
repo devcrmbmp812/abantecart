@@ -224,7 +224,7 @@ class ControllerResponsesSearchAutoGlobalSearchResult extends AController {
 				$item['label'] = mb_strlen($item['title']) > 40 ? mb_substr($item['title'], 0, 40) . '...' : $item['title'];
 
 				$item['text'] = htmlentities( $item['text'], ENT_QUOTES, 'utf-8', FALSE);
-				$item['text'] = !$item['text'] ? $item['price'] .' '. $item['title'] : $item['text'];
+				$item['text'] = !$item['text'] ? $item['title'] : $item['text'];
 
 				$results['response'][ ] = $item;
 			}

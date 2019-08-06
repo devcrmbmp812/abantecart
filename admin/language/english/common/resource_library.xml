@@ -373,8 +373,4 @@
 		<key>text_sorting_desc</key>
 		<value><![CDATA[Sort Order High &gt; Low]]></value>
 	</definition>
-	<definition>
-		<key>text_bulk_update</key>
-		<value><![CDATA[Products Bulk Update]]></value>
-	</definition>
 </definitions>

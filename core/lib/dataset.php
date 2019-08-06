@@ -576,8 +576,6 @@ final class ADataset{
 				$output = array_slice($output, $offset, $limit);
 			}
 		}
-		// echo json_encode($output);
-		// exit();
 		return $output;
 	}
 

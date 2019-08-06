@@ -12,7 +12,7 @@
 		<key>text_welcome</key>
 		<value><![CDATA[Welcome, <b>%s</b>]]></value>
 	</definition>
-	<definition>c
+	<definition>
 		<key>text_last_login</key>
 		<value><![CDATA[Last login: %s]]></value>
 	</definition>
@@ -372,6 +372,7 @@
 		<key>text_settings_newstore</key>
 		<value><![CDATA[Create New Store]]></value>
 	</definition>
+
 	<definition>
 		<key>text_voice_command_prompt</key>
 		<value><![CDATA[Voice Command Prompt.]]></value>
@@ -446,7 +447,7 @@
 		<value><![CDATA[New Orders Today]]></value>
 	</definition>
 	<definition>
-		<key>text_today_sales</key>text_bulk_update
+		<key>text_today_sales</key>
 		<value><![CDATA[Total Sales Today]]></value>
 	</definition>
 	<definition>
@@ -464,9 +465,5 @@
 	<definition>
 		<key>text_server_time</key>
 		<value><![CDATA[Server Time]]></value>
-	</definition>
-	<definition>
-		<key>text_bulk_update</key>
-		<value><![CDATA[Products Bulk Update]]></value>
 	</definition>
 </definitions>

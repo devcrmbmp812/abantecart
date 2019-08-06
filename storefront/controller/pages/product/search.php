@@ -417,18 +417,14 @@ class ControllerPagesProductSearch extends AController {
 				if (isset($request['sort'])) {
 					$url .= '&sort=' . $request['sort'];
 				}
-				else
-				{
-					$url .= '&sort=' . $sorts[4];  //Mary add 20190613
-				}
-				
+			    	
 				if (isset($request['order'])) {
 					$url .= '&order=' . $request['order'];
 				}
 				if (isset($request['limit'])) {
 					$url .= '&limit=' . $request['limit'];
 				}
-
+				
 				$this->data['pagination_bootstrap'] = $this->html->buildElement( array (
 											'type' => 'Pagination',
 											'name' => 'pagination',

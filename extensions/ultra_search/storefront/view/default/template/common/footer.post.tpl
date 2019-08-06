@@ -67,7 +67,7 @@ function myclickFunction() {
         <?php if ($this->config->get('ultra_search_enter')) {
         ?>
 		var searchkey = document.querySelector('#enterkey').value;
-		window.location = "index.php?rt=product/search&keyword="+searchkey+"&category_id=0&description=1&model=1";
+		window.location = "index.php?rt=product/search&keyword="+searchkey+"&limit=20&sort=p.price-DESC";
         <?php
     } ?>
 }
@@ -137,8 +137,7 @@ $( "#" + replace_id ).hide();
 
 
 //global search section
-            //~ $("#global_search").chosen({'width': chooswidth + 'px', 'white-space': 'nowrap',
-            $("#global_search").chosen({'width': '100%', 'white-space': 'nowrap',
+            $("#global_search").chosen({'width': chooswidth + 'px', 'white-space': 'nowrap',
             no_results_text: "<?php echo $ultra_search_text_oops; ?>",
 						placeholder_text_single: "<?php echo $ultra_search_text_search; ?>",
 						search_contains: true,

@@ -100,5 +100,9 @@
 		$(this).closest('form').submit(); return false;
 	});
 
+	$("a[href^='http://www.fedex.com/us/government/us/ways-to-ship.html']").click(function(e){
+		e.preventDefault();
+	});
+
 </script>
 <?php echo $footer; ?>

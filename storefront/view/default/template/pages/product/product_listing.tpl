@@ -100,7 +100,7 @@
 					</div>
 				<?php }
 				//John Chen 2018-09-13 For convenience editing product
-				if (stristr($trusted_ips, $_SERVER['REMOTE_ADDR'])<>false) echo '<br><a target=_blank href=index.php?s=admin_section_20180627&rt=catalog/product/update&product_id='. $product['product_id'] .'>product_id='. $product['product_id'] .'</a>';
+				if (stristr($trusted_ips, $_SERVER['REMOTE_ADDR'])<>false) echo '<br><a target=_blank href=index.php?s=codiad_ac_admin&rt=catalog/product/update&product_id='. $product['product_id'] .'>product_id='. $product['product_id'] .'</a>';
 				?>
 			</div>
 		</div>
