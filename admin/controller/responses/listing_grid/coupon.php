@@ -140,6 +140,8 @@ class ControllerResponsesListingGridCoupon extends AController {
 	  				));
 	  	}
 
+
+
 	    if ( isset( $this->request->get['id'] ) ) {
 		    foreach( $this->request->post as $field => $value ) {
 			    if (($field == 'uses_total' && $value == '') || ($field == 'uses_customer' && $value == '')) {
@@ -150,6 +152,10 @@ class ControllerResponsesListingGridCoupon extends AController {
 				if(in_array($field,array('date_start', 'date_end'))){
 					$value = dateDisplay2ISO($value);
 				}
+
+				if(in_array($field,array('code'))){
+				    $value = implode( ",", $value );
+                }
 
 			    if( in_array($field, array('discount','total')) ){
 					$value = preformatFloat($value, $this->language->get('decimal_point') );
@@ -165,6 +171,10 @@ class ControllerResponsesListingGridCoupon extends AController {
 			    if ($this->request->post['coupon_product']) {
 					$this->model_sale_coupon->editCouponProducts($this->request->get['id'], $this->request->post);
 			    }
+
+                if ($this->request->post['code']) {
+                    $this->model_sale_coupon->editCouponCodes($this->request->get['id'], $this->request->post);
+                }
 		    }
 		    return null;
 	    }
@@ -204,9 +214,9 @@ class ControllerResponsesListingGridCoupon extends AController {
 				}
 				break;
 			case 'code':
-				if ( mb_strlen($value) < 2 || mb_strlen($value) > 10) {
-					$err = $this->language->get('error_code');
-				}
+//				if ( mb_strlen($value) < 2 || mb_strlen($value) > 10) {
+//					$err = $this->language->get('error_code');
+//				}
 				break;
 			case 'date_start':
 			case 'date_end':

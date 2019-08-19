@@ -42,10 +42,16 @@ class ModelSaleCoupon extends Model{
 			$data['date_end'] = "NULL";
 		}
 
+		$code_name_array = [];
+		foreach ($data['code'] as $k => $val) {
+            $code_name_array [] = $this->getCode($val)['code_name'];
+        }
+
 		$this->db->query("INSERT INTO " . $this->db->table("coupons") . " 
-							SET code = '" . $this->db->escape($data['code']) . "',
+							SET code = '" . implode( ",", $code_name_array ) . "',
 								discount = '" . (float)$data['discount'] . "',
 								type = '" . $this->db->escape($data['type']) . "',
+								code_quantity = '" . $data['code_quantity'] . "',
 								total = '" . (float)$data['total'] . "',
 								logged = '" . (int)$data['logged'] . "',
 								shipping = '" . (int)$data['shipping'] . "',
@@ -73,6 +79,19 @@ class ModelSaleCoupon extends Model{
 									SET coupon_id = '" . (int)$coupon_id . "', product_id = '" . (int)$product_id . "'");
 			}
 		}
+
+		if (isset($data['code'])) {
+            foreach ($data['code'] as $code_id) {
+                $code_name = $this->getCode($code_id)['code_name'];
+
+                $this->db->query("INSERT INTO " . $this->db->table("coupon_code") . " 
+									SET coupon_id = '" . (int)$coupon_id . "', code_id = '" . (int)$code_id. "', code_name = '". $code_name ."', start_date = ".
+                                    $data['date_start']. ", end_date = ". $data['date_end']);
+
+                $this->db->query("UPDATE ". $this->db->table("codes") . "
+                                    SET effective = '1' WHERE id = '".$code_id."'");
+            }
+        }
 		return $coupon_id;
 	}
 
@@ -99,6 +118,7 @@ class ModelSaleCoupon extends Model{
 
 		$coupon_table_fields = array (
 				'code',
+				'code_quantity',
 				'discount',
 				'type',
 				'total',
@@ -113,9 +133,15 @@ class ModelSaleCoupon extends Model{
 		$update = array ();
 		foreach ($coupon_table_fields as $f) {
 			if (isset($data[$f])) {
-				if (!in_array($f, array ('date_start', 'date_end'))) {
+				if (!in_array($f, array ('date_start', 'date_end', 'code'))) {
 					$update[] = $f . " = '" . $this->db->escape($data[$f]) . "'";
-				} else {
+				} else if (in_array($f, array ('code'))){
+                    $code_name_array = [];
+                    foreach ($data['code'] as $k => $val) {
+                        $code_name_array [] = $this->getCode($val)['code_name'];
+                    }
+                    $update[] = $f . " = '" . implode( ",", $code_name_array ) . "'";
+                } else {
 					$update[] = $f . " = " . $data[$f] . "";
 				}
 			}
@@ -163,6 +189,22 @@ class ModelSaleCoupon extends Model{
 			}
 		}
 	}
+
+    /**
+     * @param int $coupon_id
+     * @param array $data
+     */
+	public function editCouponCodes($coupon_id, $data) {
+        $this->db->query("DELETE FROM " . $this->db->table("coupon_code") . " 
+						  WHERE coupon_id = '" . (int)$coupon_id . "'");
+        if (isset($data['code'])) {
+            foreach ($data['code'] as $code_id) {
+                $this->db->query("INSERT INTO " . $this->db->table("coupon_code") . " 
+									SET coupon_id = '" . (int)$coupon_id . "',
+										code_id = '" . (int)$code_id . "'");
+            }
+        }
+    }
 
 	/**
 	 * @param int $coupon_id
@@ -316,4 +358,149 @@ class ModelSaleCoupon extends Model{
 
 		return $coupon_product_data;
 	}
+
+    /**
+     * @param int $coupon_id
+     * @return array
+     */
+    public function getCouponCode($coupon_id){
+        $coupon_code_data = array ();
+
+        $query = $this->db->query("SELECT *
+									FROM " . $this->db->table("coupon_code") . " 
+									WHERE coupon_id = '" . (int)$coupon_id . "'");
+
+        foreach ($query->rows as $result) {
+            $coupon_code_data [] = $result['code_id'];
+        }
+
+        return $coupon_code_data;
+    }
+
+    /**
+     * @param int $code_id
+     * @return array
+     */
+
+    public function getCode($code_id){
+        $query = $this->db->query("SELECT *	FROM " . $this->db->table("codes") . " p
+									WHERE p.id = '" . (int)$code_id . "'");
+        return $query->row;
+    }
+
+    /**
+     * @param array $data
+     * @param string $mode
+     * @return array|int
+     */
+    public function getCodes($data = array (), $mode = 'default'){
+
+        if (!empty($data['content_language_id'])){
+            $language_id = (int)$data['content_language_id'];
+        } else{
+            $language_id = (int)$this->config->get('storefront_language_id');
+        }
+
+        if ($data['store_id']){
+            $store_id = (int)$data['store_id'];
+        } else{
+            $store_id = (int)$this->config->get('config_store_id');
+        }
+
+        if ($data || $mode == 'total_only'){
+            $match = '';
+            $filter = (isset($data['filter']) ? $data['filter'] : array ());
+
+            if ($mode == 'total_only'){
+                $sql = "SELECT COUNT(*) as total ";
+            } else{
+                $sql = "SELECT *";
+            }
+            $sql .= " FROM " . $this->db->table("codes") . " p ";
+
+            if($mode == 'update') {
+                $sql .= ' WHERE 1=1 ';
+            } else {
+                $sql .= ' WHERE 1=1 AND effective = "0"';
+            }
+
+            if (!empty($data['subsql_filter'])){
+                $sql .= " AND " . $data['subsql_filter'];
+            }
+
+            if (isset($filter['match']) && !is_null($filter['match'])){
+                $match = $filter['match'];
+            }
+
+            if (isset($filter['exclude']['id'])){
+                $exclude = $filter['exclude']['id'];
+                $excludes = array ();
+                if (is_array($exclude)){
+                    foreach ($exclude as $ex){
+                        $excludes[] = (int)$ex;
+                    };
+                } elseif ((int)$exclude){
+                    $excludes = array ((int)$exclude);
+                }
+
+                if ($excludes){
+                    $sql .= " AND p.id NOT IN (" . implode(',', $excludes) . ") ";
+                }
+            }
+
+            if (isset($filter['keyword']) && !is_null($filter['keyword'])){
+                $keywords = explode(' ', $filter['keyword']);
+
+                if ($match == 'any'){
+                    $sql .= " AND ";
+                    foreach ($keywords as $k => $keyword){
+                        $sql .= $k > 0 ? " OR" : "";
+                        $sql .= " (LCASE(p.code_name) LIKE '%" . $this->db->escape(mb_strtolower($keyword),true) . "%'";
+                    }
+                    $sql .= " )";
+                } else if ($match == 'all'){
+                    $sql .= " AND ";
+                    foreach ($keywords as $k => $keyword){
+                        $sql .= $k > 0 ? " AND" : "";
+                        $sql .= " (LCASE(p.code_name) LIKE '%" . $this->db->escape(mb_strtolower($keyword),true) . "%'";
+                    }
+                    $sql .= " )";
+                }
+            }
+
+            //If for total, we done building the query
+            if ($mode == 'total_only'){
+                $query = $this->db->query($sql);
+                return $query->row['total'];
+            }
+
+
+            if (isset($data['start']) || isset($data['limit'])){
+                if ($data['start'] < 0){
+                    $data['start'] = 0;
+                }
+
+                if ($data['limit'] < 1){
+                    $data['limit'] = 20;
+                }
+                $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+            }
+            $query = $this->db->query($sql);
+            return $query->rows;
+        } else{
+            $cache_key = 'product.lang_' . $language_id;
+            $product_data = $this->cache->pull($cache_key);
+            if ($product_data === false){
+                $query = $this->db->query("SELECT *, p.product_id
+											FROM " . $this->db->table("products") . " p
+											LEFT JOIN " . $this->db->table("product_descriptions") . " pd
+												ON (p.product_id = pd.product_id AND pd.language_id = '" . $language_id . "')
+											ORDER BY pd.name ASC");
+                $product_data = $query->rows;
+                $this->cache->push($cache_key, $product_data);
+            }
+
+            return $product_data;
+        }
+    }
 }

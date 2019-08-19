@@ -125,6 +125,10 @@
 		<value><![CDATA[Save]]></value>
 	</definition>
 	<definition>
+		<key>button_download</key>
+		<value><![CDATA[Download]]></value>
+	</definition>
+	<definition>
 		<key>button_save_and_close</key>
 		<value><![CDATA[Save & Close]]></value>
 	</definition>
@@ -656,6 +660,10 @@
 	<definition>
 		<key>text_select_from_lookup</key>
 		<value><![CDATA[Start typing (name, model, sku, etc.) to look up and select result]]></value>
+	</definition>
+	<definition>
+		<key>code_select_from_lookup</key>
+		<value><![CDATA[Start typing character, number to look up and select result]]></value>
 	</definition>
 	<definition>
 		<key>text_continue_typing</key>

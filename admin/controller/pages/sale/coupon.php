@@ -25,6 +25,7 @@ class ControllerPagesSaleCoupon extends AController {
     public $error = array();
     private $fields = array('coupon_description',
 							'code',
+							'code_quantity',
 							'type',
 							'discount',
 							'total',
@@ -320,6 +321,7 @@ class ControllerPagesSaleCoupon extends AController {
         if (!is_array($this->data['coupon_product'])) {
             if (isset($coupon_info)) {
                 $this->data['coupon_product'] = $this->model_sale_coupon->getCouponProducts($this->request->get['coupon_id']);
+                $this->data['code'] = $this->model_sale_coupon->getCouponCode($this->request->get['coupon_id']);
             } else {
                 $this->data['coupon_product'] = array();
             }
@@ -433,12 +435,64 @@ class ControllerPagesSaleCoupon extends AController {
             'style' => 'large-field',
             'multilingual' => true,
         ));
-        $this->data['form']['fields']['code'] = $form->getFieldHtml(array(
+        $this->data['form']['fields']['code_quantity'] = $form->getFieldHtml(array(
             'type' => 'input',
-            'name' => 'code',
-            'value' => $this->data['code'],
+            'name' => 'code_quantity',
+            'value' => $this->data['code_quantity'],
             'required' => true,
         ));
+
+        /* multi select code start ---*/
+
+        $this->loadModel('setting/store');
+        //Get store name
+        $store_info = $this->model_setting_store->getStore($this->config->get('config_store_id'));
+        $store_name = 'For store ' . $store_info['store_name']. ': ';
+
+        //load only prior saved codes
+        $this->data['codes'] = array();
+
+        if (count($this->data['code']) && $this->data['code'] != '') {
+
+            $this->loadModel('sale/coupon');
+            $ids = array();
+            foreach($this->data['code'] as $id){
+                $ids[] = (int)$id;
+            }
+            $filter = array('subsql_filter' => 'p.id in (' . implode(',', $ids) . ')' );
+            $results = $this->model_sale_coupon->getcodes($filter, 'update');
+
+            $code_ids = array();
+            foreach($results as $result){
+                $code_ids[] = (int)$result['id'];
+                $this->data['code'][$result['id']]['name'] = $result['code_name'];
+            }
+
+            foreach( $results as $r ) {
+                $this->data['codes'][$r['id']]['name'] = $r['code_name'];
+            }
+        }
+
+        $this->data['form']['fields']['code'] = $form->getFieldHtml(
+            array(
+                'type' => 'multiselectbox',
+                'name' => 'code[]',
+                'value' => $this->data['code'],
+                'options' => $this->data['codes'],
+                'style' => 'chosen large-field',
+                'ajax_url' => $this->html->getSecureURL('r/sale/code/codes'),
+                'placeholder' => $store_name . $this->language->get('code_select_from_lookup'),
+            ));
+
+        /* multi select code end ---*/
+
+       $this->data['form']['fields']['download'] = $form->getFieldHtml(array(
+           'type' => 'button',
+           'name' => 'button',
+           'text' => $this->language->get('button_download'),
+           'style' => 'button1',
+       ));
+
         $this->data['form']['fields']['type'] = $form->getFieldHtml(array(
             'type' => 'selectbox',
             'name' => 'type',
@@ -500,17 +554,16 @@ class ControllerPagesSaleCoupon extends AController {
             'type' => 'input',
             'name' => 'uses_total',
             'value' => $this->data['uses_total'],
+            'attr' => 'readonly'
         ));
         $this->data['form']['fields']['uses_customer'] = $form->getFieldHtml(array(
             'type' => 'input',
             'name' => 'uses_customer',
             'value' => $this->data['uses_customer'],
+            'attr' => 'readonly'
         ));
 
-        $this->loadModel('setting/store');
-        //Get store name
-        $store_info = $this->model_setting_store->getStore($this->config->get('config_store_id'));
-        $store_name = 'For store ' . $store_info['store_name']. ': ';
+
 
         if($this->request->get['coupon_id']){
 		    $this->loadModel('sale/order');
@@ -596,8 +649,8 @@ class ControllerPagesSaleCoupon extends AController {
             }
         }
 
-        if (mb_strlen($this->request->post['code']) < 2 || mb_strlen($this->request->post['code']) > 10) {
-            $this->error['code'] = $this->language->get('error_code');
+        if(!has_value($this->request->post['code_quantity'])) {
+            $this->error['code_quantity'] = $this->language->get('error_code_quantity');
         }
 
 		if (!has_value($this->request->post['date_start'])) {
