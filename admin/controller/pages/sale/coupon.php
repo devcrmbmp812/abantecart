@@ -210,6 +210,7 @@ class ControllerPagesSaleCoupon extends AController {
         $this->document->setTitle($this->language->get('heading_title'));
         $this->load->library('json');
         if ( $this->request->is_POST() && $this->_validateForm()) {
+
 			if (has_value($this->request->post[ 'date_start' ])) {
 				$this->request->post[ 'date_start' ] = dateDisplay2ISO(
 																		$this->request->post[ 'date_start' ],
@@ -266,6 +267,7 @@ class ControllerPagesSaleCoupon extends AController {
 
             $this->model_sale_coupon->editCoupon($this->request->get['coupon_id'], $post);
             $this->model_sale_coupon->editCouponProducts($this->request->get['coupon_id'], $post);
+            $this->model_sale_coupon->editCouponCodes($this->request->get['coupon_id'], $post);
             $this->session->data['success'] = $this->language->get('text_success');
             redirect($this->html->getSecureURL('sale/coupon/update', '&coupon_id=' . $this->request->get['coupon_id']));
         }
@@ -311,6 +313,11 @@ class ControllerPagesSaleCoupon extends AController {
             }
         }
 
+        if (isset($coupon_info)) {
+            $this->data['code'] = $this->model_sale_coupon->getCouponCode($this->request->get['coupon_id']);
+        } else {
+            $this->data['code'] = array();
+        }
         if (!is_array($this->data['coupon_description'])) {
             if (isset($this->request->get['coupon_id'])) {
                 $this->data['coupon_description'] = $this->model_sale_coupon->getCouponDescriptions($this->request->get['coupon_id']);
@@ -321,7 +328,6 @@ class ControllerPagesSaleCoupon extends AController {
         if (!is_array($this->data['coupon_product'])) {
             if (isset($coupon_info)) {
                 $this->data['coupon_product'] = $this->model_sale_coupon->getCouponProducts($this->request->get['coupon_id']);
-                $this->data['code'] = $this->model_sale_coupon->getCouponCode($this->request->get['coupon_id']);
             } else {
                 $this->data['coupon_product'] = array();
             }
@@ -440,7 +446,15 @@ class ControllerPagesSaleCoupon extends AController {
             'name' => 'code_quantity',
             'value' => $this->data['code_quantity'],
             'required' => true,
+            'style' => 'large-field',
+
         ));
+         $this->data['form']['fields']['select_code_btn'] = $form->getFieldHtml(array(
+             'type' => 'button',
+             'name' => 'select_code_btn',
+             'text' => 'Select Code',
+             'style' => 'button1',
+         ));
 
         /* multi select code start ---*/
 
@@ -462,33 +476,49 @@ class ControllerPagesSaleCoupon extends AController {
             $filter = array('subsql_filter' => 'p.id in (' . implode(',', $ids) . ')' );
             $results = $this->model_sale_coupon->getcodes($filter, 'update');
 
-            $code_ids = array();
-            foreach($results as $result){
-                $code_ids[] = (int)$result['id'];
-                $this->data['code'][$result['id']]['name'] = $result['code_name'];
+            foreach($results as $r => $value){
+                $this->data['codes'][$value['id']]['name'] = $value['code_name'];
             }
-
-            foreach( $results as $r ) {
-                $this->data['codes'][$r['id']]['name'] = $r['code_name'];
-            }
+        }
+        if(count($this->data['code']) < 10) {
+            $selected_codes_value = $this->data['code'];
+        } else {
+            $selected_codes_value = array_slice($this->data['code'],0,10);
         }
 
         $this->data['form']['fields']['code'] = $form->getFieldHtml(
             array(
                 'type' => 'multiselectbox',
                 'name' => 'code[]',
-                'value' => $this->data['code'],
+                'value' => $selected_codes_value,
                 'options' => $this->data['codes'],
                 'style' => 'chosen large-field',
-                'ajax_url' => $this->html->getSecureURL('r/sale/code/codes'),
-                'placeholder' => $store_name . $this->language->get('code_select_from_lookup'),
-            ));
+//                'ajax_url' => $this->html->getSecureURL('r/sale/code/codes'),
+                'attr' => 'readonly'
+            )
+        );
+
+        $this->data['form']['fields']['select_code_ajax_url'] = $form->getFieldHtml(
+            array(
+                'type' => 'hidden',
+                'name' => 'select_code_ajax_url',
+                'value' => $this->html->getSecureURL('r/sale/code/select_codes'),
+            )
+        );
+
+        $this->data['form']['fields']['selected_codes'] = $form->getFieldHtml(
+            array(
+                'type' => 'hidden',
+                'name' => 'selected_codes',
+                'value' => '',
+            )
+        );
 
         /* multi select code end ---*/
 
        $this->data['form']['fields']['download'] = $form->getFieldHtml(array(
            'type' => 'button',
-           'name' => 'button',
+           'name' => 'download_btn',
            'text' => $this->language->get('button_download'),
            'style' => 'button1',
        ));

@@ -843,6 +843,80 @@ jQuery(document).ready(function() {
 		}
 	});
 	formOnExit();
+	$('#couponFrm_select_code_btn').click(function(e){
+        e.preventDefault();
+		var code_quantity = $('#couponFrm_code_quantity').val();
+		var select_code_ajax_url = $('#couponFrm_select_code_ajax_url').val();
+        $('#couponFrm_code_chosen ul li').remove();
+        $.ajax({
+            type: "POST",
+            url: select_code_ajax_url,
+            data: {
+                code_quantity: code_quantity
+            },
+            success: function (result) {
+                $('#couponFrm_code_chosen li.search-field').remove();
+                $('#couponFrm_selected_codes').val(JSON.stringify(result));
+                for(var k in result) {
+                	if(k == 10) { break; }
+                    console.log(k, result[k]);
+                    var id = result[k].id;
+                    var name = result[k].name;
+                    $('#couponFrm_code_chosen ul').append('<li class="search-choice"><span><span class=""> '+ name +'</span></span><a class="search-choice-close" data-option-array-index="'+ id +'"></a></li>');
+                }
+            }
+        });
+		console.log(select_code_ajax_url)
+		console.log(code_quantity);
+	});
+    $('#couponFrm_download_btn').click(function(e){
+        e.preventDefault();
+        const rows = [
+            ["No", "name"]
+        ];
+    	var selected_codes = $('#couponFrm_selected_codes').val();
+        var option_values = $("#couponFrm_code > option").map(function() { return $(this).val(); });
+        var option_texts = $("#couponFrm_code > option").map(function() { return $(this).text().substr(0,$(this).text().indexOf(' ')); });
+    	var obj = [];
+		if(selected_codes) {
+            obj = JSON.parse(selected_codes);
+            for(var i in obj) {
+                console.log(i, obj[i])
+                var valueToPush = new Array();
+                valueToPush[0] = parseInt(i) + 1;
+                valueToPush[1] = obj[i].name;
+                rows.push(valueToPush);
+            }
+		} else {
+            option_texts.each(function(j, item){
+                var valueToPush = new Array();
+                valueToPush[0] = parseInt(j) + 1;
+                valueToPush[1] = item;
+                rows.push(valueToPush);
+			});
+		}
+
+        var csvContent = "data:text/csv;charset=utf-8,";
+        var tsv_name = $('#couponFrm_coupon_description1name').val() ? $('#couponFrm_coupon_description1name').val() : "selected_codes";
+
+        rows.forEach(function(rowArray) {
+            var row = rowArray.join(" ");
+            csvContent += row + "\r\n";
+        });
+        var encodedUri = encodeURI(csvContent);
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", tsv_name +".tsv");
+        document.body.appendChild(link); // Required for FF
+
+        link.click();
+    });
+    setTimeout(function(){
+        $('#couponFrm_code_chosen ul li.search-field').remove();
+        $('#couponFrm_code_chosen a.search-choice-close').off('click');
+        console.log($('#chosen-couponFrm_code_chosen div.chosen-drop').html());
+        $('#couponFrm_code_chosen div.chosen-drop').remove();
+	}, 100);
 });
 
 //------------------------------------------------------------------------------

@@ -42,13 +42,19 @@ class ModelSaleCoupon extends Model{
 			$data['date_end'] = "NULL";
 		}
 
+		$codes_selected_array = json_decode(html_entity_decode($data['selected_codes']));
+		$codes_name_array = array();
+        foreach ($codes_selected_array as $key => $value) {
+            $codes_name_array [] = $value->name;
+		}
+
 		$code_name_array = [];
 		foreach ($data['code'] as $k => $val) {
             $code_name_array [] = $this->getCode($val)['code_name'];
         }
 
 		$this->db->query("INSERT INTO " . $this->db->table("coupons") . " 
-							SET code = '" . implode( ",", $code_name_array ) . "',
+							SET code = '" . implode( ",", $codes_name_array ) . "',
 								discount = '" . (float)$data['discount'] . "',
 								type = '" . $this->db->escape($data['type']) . "',
 								code_quantity = '" . $data['code_quantity'] . "',
@@ -80,13 +86,13 @@ class ModelSaleCoupon extends Model{
 			}
 		}
 
-		if (isset($data['code'])) {
-            foreach ($data['code'] as $code_id) {
-                $code_name = $this->getCode($code_id)['code_name'];
-
+		if (isset($data['selected_codes'])) {
+            foreach ($codes_selected_array as $key => $value) {
+                $code_id = $value->id;
+                $code_name = $value->name;
                 $this->db->query("INSERT INTO " . $this->db->table("coupon_code") . " 
 									SET coupon_id = '" . (int)$coupon_id . "', code_id = '" . (int)$code_id. "', code_name = '". $code_name ."', start_date = ".
-                                    $data['date_start']. ", end_date = ". $data['date_end']);
+                    $data['date_start']. ", end_date = ". $data['date_end']);
 
                 $this->db->query("UPDATE ". $this->db->table("codes") . "
                                     SET effective = '1' WHERE id = '".$code_id."'");
@@ -136,11 +142,12 @@ class ModelSaleCoupon extends Model{
 				if (!in_array($f, array ('date_start', 'date_end', 'code'))) {
 					$update[] = $f . " = '" . $this->db->escape($data[$f]) . "'";
 				} else if (in_array($f, array ('code'))){
-                    $code_name_array = [];
-                    foreach ($data['code'] as $k => $val) {
-                        $code_name_array [] = $this->getCode($val)['code_name'];
+                    $codes_selected_array = json_decode(html_entity_decode($data['selected_codes']));
+                    $codes_name_array = array();
+                    foreach ($codes_selected_array as $key => $value) {
+                        $codes_name_array [] = $value->name;
                     }
-                    $update[] = $f . " = '" . implode( ",", $code_name_array ) . "'";
+                    $update[] = $f . " = '" . implode( ",", $codes_name_array ) . "'";
                 } else {
 					$update[] = $f . " = " . $data[$f] . "";
 				}
@@ -197,12 +204,16 @@ class ModelSaleCoupon extends Model{
 	public function editCouponCodes($coupon_id, $data) {
         $this->db->query("DELETE FROM " . $this->db->table("coupon_code") . " 
 						  WHERE coupon_id = '" . (int)$coupon_id . "'");
-        if (isset($data['code'])) {
-            foreach ($data['code'] as $code_id) {
-                $this->db->query("INSERT INTO " . $this->db->table("coupon_code") . " 
+        $codes_selected_array = json_decode(html_entity_decode($data['selected_codes']));
+        foreach ($codes_selected_array as $key => $value) {
+            $code_id = $value->id;
+            $code_name = $value->name;
+            $this->db->query("INSERT INTO " . $this->db->table("coupon_code") . " 
 									SET coupon_id = '" . (int)$coupon_id . "',
+									    code_name = '".$code_name."',
 										code_id = '" . (int)$code_id . "'");
-            }
+            $this->db->query("UPDATE ". $this->db->table("codes") . "
+                                    SET effective = '1' WHERE id = '".$code_id."'");
         }
     }
 
@@ -502,5 +513,14 @@ class ModelSaleCoupon extends Model{
 
             return $product_data;
         }
+    }
+
+    /**
+     * @param int $quantity
+     * @return array
+     */
+    public function getCodeWithQuantity($quantity) {
+        $query = $this->db->query("SELECT * FROM ".$this->db->table("codes")." WHERE effective = '0' LIMIT 0, ".$quantity);
+        return $query->rows;
     }
 }
