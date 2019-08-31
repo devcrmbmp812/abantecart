@@ -916,6 +916,9 @@ jQuery(document).ready(function() {
         $('#couponFrm_code_chosen a.search-choice-close').off('click');
         console.log($('#chosen-couponFrm_code_chosen div.chosen-drop').html());
         $('#couponFrm_code_chosen div.chosen-drop').remove();
+        console.log("parent html",$('#couponFrm_code').parent().parent().css("margin-bottom", "0px"));
+        console.log("parent html",$('#couponFrm_select_code_ajax_url').parent().parent().css("margin-bottom", "0px"));
+        console.log("parent html",$('#couponFrm_selected_codes').parent().parent().css("margin-bottom", "0px"));
 	}, 100);
 });
 

@@ -142,21 +142,36 @@ class ModelSaleCoupon extends Model{
 				if (!in_array($f, array ('date_start', 'date_end', 'code'))) {
 					$update[] = $f . " = '" . $this->db->escape($data[$f]) . "'";
 				} else if (in_array($f, array ('code'))){
+				    /*Start of getting previous code of coupon*/
+                    $coupon_code_data = array ();
+
+                    $query = $this->db->query("SELECT *
+									FROM " . $this->db->table("coupons") . " 
+									WHERE coupon_id = '" . (int)$coupon_id . "'");
+
+                    foreach ($query->rows as $result) {
+                        $coupon_code_data_string = $result['code'];
+                        $coupon_code_data = explode(',', $coupon_code_data_string);
+                    }
+                    /*End of getting coupon code*/
                     $codes_selected_array = json_decode(html_entity_decode($data['selected_codes']));
                     $codes_name_array = array();
                     foreach ($codes_selected_array as $key => $value) {
                         $codes_name_array [] = $value->name;
                     }
-                    $update[] = $f . " = '" . implode( ",", $codes_name_array ) . "'";
+                    $merged_codename_array = array_merge($coupon_code_data,$codes_name_array);
+                    $update[] = $f . " = '" . implode( ",", $merged_codename_array ) . "'";
                 } else {
 					$update[] = $f . " = " . $data[$f] . "";
 				}
 			}
 		}
 		if (!empty($update)) {
+		    $update[1] = "code_quantity = '".count(explode(',', $update[0]))."'";
 			$this->db->query("UPDATE " . $this->db->table("coupons") . " 
 							SET " . implode(',', $update) . "
 							WHERE coupon_id = '" . (int)$coupon_id . "'");
+
 		}
 
 		if (!empty($data['coupon_description'])) {
@@ -202,8 +217,8 @@ class ModelSaleCoupon extends Model{
      * @param array $data
      */
 	public function editCouponCodes($coupon_id, $data) {
-        $this->db->query("DELETE FROM " . $this->db->table("coupon_code") . " 
-						  WHERE coupon_id = '" . (int)$coupon_id . "'");
+//        $this->db->query("DELETE FROM " . $this->db->table("coupon_code") . "
+//						  WHERE coupon_id = '" . (int)$coupon_id . "'");
         $codes_selected_array = json_decode(html_entity_decode($data['selected_codes']));
         foreach ($codes_selected_array as $key => $value) {
             $code_id = $value->id;
