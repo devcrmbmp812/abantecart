@@ -876,4 +876,44 @@ class ModelCheckoutOrder extends Model{
 
 		return true;
 	}
+
+    /**
+     * @param int $coupon_id
+     * @param int $order_id
+     * @param int $customer_id
+     * @param int $code_id
+     * @return null
+     */
+    public function addCustomerCode($coupon_id, $order_id, $customer_id, $code_id){
+        $this->db->query("INSERT INTO " . $this->db->table('customer_code') . " 
+							SET coupon_id = '" . (int)$coupon_id . "', 
+								order_id = '" . (int)$order_id . "',
+								customer_id = '" . (int)$customer_id. "',
+								code_id = '" . (int)$code_id. "', 
+								date_added = NOW()"
+        );
+        return null;
+    }
+
+    /**
+     * @param string $coupon_name
+     * @return coupon_data
+     */
+    public function getCouponInfo($coupon_name) {
+        $coupon_info_query = $this->db->query(
+            "SELECT *
+				FROM `" . $this->db->table("coupon_code") . "`
+				WHERE code_name = '" . $coupon_name. "'"
+        );
+
+        if ($coupon_info_query->num_rows) {
+            $coupon_info = array();
+            $coupon_info['code_id'] = $coupon_info_query->row['code_id'];
+            $coupon_info['coupon_id'] = $coupon_info_query->row['coupon_id'];
+            return $coupon_info;
+        }
+        else {
+            return false;
+        }
+    }
 }
