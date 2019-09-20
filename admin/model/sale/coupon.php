@@ -217,8 +217,6 @@ class ModelSaleCoupon extends Model{
      * @param array $data
      */
 	public function editCouponCodes($coupon_id, $data) {
-//        $this->db->query("DELETE FROM " . $this->db->table("coupon_code") . "
-//						  WHERE coupon_id = '" . (int)$coupon_id . "'");
         $codes_selected_array = json_decode(html_entity_decode($data['selected_codes']));
         foreach ($codes_selected_array as $key => $value) {
             $code_id = $value->id;
@@ -226,6 +224,8 @@ class ModelSaleCoupon extends Model{
             $this->db->query("INSERT INTO " . $this->db->table("coupon_code") . " 
 									SET coupon_id = '" . (int)$coupon_id . "',
 									    code_name = '".$code_name."',
+									    start_date = '".$data['date_start']."',
+									    end_date = '".$data['date_end']."',
 										code_id = '" . (int)$code_id . "'");
             $this->db->query("UPDATE ". $this->db->table("codes") . "
                                     SET effective = '1' WHERE id = '".$code_id."'");
@@ -537,5 +537,96 @@ class ModelSaleCoupon extends Model{
     public function getCodeWithQuantity($quantity) {
         $query = $this->db->query("SELECT * FROM ".$this->db->table("codes")." WHERE effective = '0' LIMIT 0, ".$quantity);
         return $query->rows;
+    }
+
+    /**
+     * @param array $data
+     * @param string $mode
+     * @return array|int
+     */
+    public function getCouponDetails($data = array (), $mode = 'default'){
+        if (!empty($data['content_language_id'])) {
+            $language_id = ( int )$data['content_language_id'];
+        } else {
+            $language_id = (int)$this->config->get('storefront_language_id');
+        }
+
+        //Build final filter
+        $grid_filter_params = array ('coupon_name' => 'cdef.name', 'customer_name' => 'cde.firstname');
+        $filter_grid = new AFilter(array (
+            'method'                   => 'post',
+            'grid_filter_params'       => $grid_filter_params,
+        ));
+        $data = array_merge($filter_grid->getFilterData(), $data);
+
+        if ($mode == 'total_only') {
+            $total_sql = 'count(*) as total';
+        } else {
+            $total_sql = "c.id AS customer_code_id, cdef.name AS coupon_name, CONCAT(cde.firstname,' ',cde.lastname) AS customer_name, c.order_id, c.date_used";
+        }
+
+        $sql = "SELECT " . $total_sql . " 
+				FROM " . $this->db->table("customer_code") . " c
+				LEFT JOIN " . $this->db->table("coupons") . " cd
+					ON c.coupon_id = cd.coupon_id
+				LEFT JOIN " . $this->db->table("customers") . " cde
+					ON c.customer_id = cde.customer_id
+				LEFT JOIN " . $this->db->table("coupon_descriptions") . " cdef
+					ON (c.coupon_id = cdef.coupon_id AND cdef.language_id = '" . $language_id . "')
+				WHERE 1=1 ";
+
+        if (!empty($data['search'])) {
+            $sql .= " AND " . $data['search'];
+        }
+        if (!empty($data['subsql_filter'])) {
+            $sql .= " AND " . $data['subsql_filter'];
+        }
+
+        //If for total, we done building the query
+        if ($mode == 'total_only') {
+            $query = $this->db->query($sql);
+            return $query->row['total'];
+        }
+
+        $sort_data = array (
+            'name'       => 'coupon_name',
+            'code'       => 'customer_name',
+            'discount'   => 'c.order_id',
+            'date_start' => 'c.date_used',
+        );
+
+        if (isset($data['sort']) && array_key_exists($data['sort'], $sort_data)) {
+            $sql .= " ORDER BY " . $sort_data[$data['sort']];
+        } else {
+            $sql .= " ORDER BY coupon_name";
+        }
+
+        if (isset($data['order']) && (strtoupper($data['order']) == 'DESC')) {
+            $sql .= " DESC";
+        } else {
+            $sql .= " ASC";
+        }
+
+        if (isset($data['start']) || isset($data['limit'])) {
+            if ($data['start'] < 0) {
+                $data['start'] = 0;
+            }
+
+            if ($data['limit'] < 1) {
+                $data['limit'] = 20;
+            }
+
+            $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+        }
+        $query = $this->db->query($sql);
+        return $query->rows;
+    }
+
+    /**
+     * @param array $data
+     * @return int
+     */
+    public function getTotalCouponDetails($data){
+        return $this->getCouponDetails($data, 'total_only');
     }
 }

@@ -91,17 +91,8 @@ class ControllerPagesCheckoutConfirm extends AController{
 		$this->data = array ();
 
 		$order = new AOrder($this->registry);
-		$coupon_name = $this->session->data['coupon'];
-
-		$coupon_info = $this->model_checkout_order->getCouponInfo($coupon_name);
-
-		$code_id = $coupon_info['code_id'];
-		$coupon_id = $coupon_info['coupon_id'];
-		$customer_id = $this->session->data['customer_id'];
-
 		$this->data = $order->buildOrderData($this->session->data);
 		$order_id = $order->saveOrder();
-        $this->model_checkout_order->addCustomerCode($coupon_id, $order_id, $customer_id, $code_id);
 		if ($order_id === false){
 			// preventing rebuilding order of already processed orders
 			//(by "back" button via browser history from external payment page(paypal, google_checkout etc))

@@ -890,6 +890,7 @@ class ModelCheckoutOrder extends Model{
 								order_id = '" . (int)$order_id . "',
 								customer_id = '" . (int)$customer_id. "',
 								code_id = '" . (int)$code_id. "', 
+								date_used = '" .  date("Y-m-d") . "', 
 								date_added = NOW()"
         );
         return null;

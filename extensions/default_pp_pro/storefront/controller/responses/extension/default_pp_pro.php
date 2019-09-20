@@ -343,6 +343,19 @@ class ControllerResponsesExtensionDefaultPPPro extends AController{
 
 				$this->model_checkout_order->updatePaymentMethodData($this->session->data['order_id'], serialize($response_data));
 				$this->model_checkout_order->update($this->session->data['order_id'], $this->config->get('default_pp_pro_order_status_id'), $message, false);
+				//TODO: update coupond code with customer information after success payment
+
+                $coupon_name = $this->session->data['coupon'];
+                if($coupon_name) {
+                    $coupon_info = $this->model_checkout_order->getCouponInfo($coupon_name);
+
+                    $code_id = $coupon_info['code_id'];
+                    $coupon_id = $coupon_info['coupon_id'];
+                    $customer_id = $this->session->data['customer_id'];
+                    $order_id = $this->session->data['order_id'];
+
+                    $this->model_checkout_order->addCustomerCode($coupon_id, $order_id, $customer_id, $code_id);
+                }
 
 				$json['success'] = $this->html->getSecureURL('checkout/success');
 			} else{
