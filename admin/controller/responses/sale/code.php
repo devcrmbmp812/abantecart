@@ -90,22 +90,40 @@ class ControllerResponsesSaleCode extends AController{
 
     public function select_codes() {
         $post =& $this->request->post;
-        $this->extensions->hk_InitData($this, __FUNCTION__);
-        $this->loadModel('sale/coupon');
-        $codes = $this->model_sale_coupon->getCodeWithQuantity($post['code_quantity']);
-        $codes_data = array();
-        if (isset($codes) && count($codes)){
-            foreach ($codes as $code_data){
+        if(isset($post['code_quantity'])) {
+            $this->extensions->hk_InitData($this, __FUNCTION__);
+            $this->loadModel('sale/coupon');
+            $codes = $this->model_sale_coupon->getCodeWithQuantity($post['code_quantity']);
+            $codes_data = array();
+            if (isset($codes) && count($codes)){
+                foreach ($codes as $code_data){
 
-                $codes_data[] = array (
-                    'id'         => $code_data['id'],
-                    'name'       => $code_data['code_name']
-                );
+                    $codes_data[] = array (
+                        'id'         => $code_data['id'],
+                        'name'       => $code_data['code_name']
+                    );
+                }
             }
+            $this->extensions->hk_UpdateData($this, __FUNCTION__);
+            $this->load->library('json');
+            $this->response->addJSONHeader();
+            $this->response->setOutput(AJson::encode($codes_data));
+        } else if (isset($post['code_id'])) {
+            $this->extensions->hk_InitData($this, __FUNCTION__);
+            $this->loadModel('sale/coupon');
+            $code_details = $this->model_sale_coupon->getCodeDetailsWithCodeId($post['code_id']);
+            $code_detail_data = array();
+            $code_detail_data[] = array (
+                'coupon_id'         => $code_details['coupon_id'],
+                'is_used'       => $code_details['is_used'],
+                'start_date'       => $code_details['start_date'],
+                'end_date'       => $code_details['end_date'],
+            );
+            $this->extensions->hk_UpdateData($this, __FUNCTION__);
+            $this->load->library('json');
+            $this->response->addJSONHeader();
+            $this->response->setOutput(AJson::encode($code_detail_data));
         }
-        $this->extensions->hk_UpdateData($this, __FUNCTION__);
-        $this->load->library('json');
-        $this->response->addJSONHeader();
-        $this->response->setOutput(AJson::encode($codes_data));
+
     }
 }

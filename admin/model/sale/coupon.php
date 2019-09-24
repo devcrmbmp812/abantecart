@@ -538,6 +538,33 @@ class ModelSaleCoupon extends Model{
         $query = $this->db->query("SELECT * FROM ".$this->db->table("codes")." WHERE effective = '0' LIMIT 0, ".$quantity);
         return $query->rows;
     }
+    /**
+     * @param int $code_id
+     * @return array
+     */
+    public function getCodeDetailsWithCodeId($code_id) {
+        $return_array = array();
+        $result = $this->db->query("SELECT * FROM ".$this->db->table("coupon_code")." WHERE code_id = '".$code_id."'");
+        if ($result->num_rows) {// if the code has already selected for one coupon
+            $is_used_result = $this->db->query("SELECT * FROM ".$this->db->table("customer_code")." WHERE code_id = '".$code_id."'");
+            if ( $is_used_result->num_rows ) {// if the code was used already
+                $return_array['is_used'] = 1;
+            } else {
+                $return_array['is_used'] = 0;
+            }
+            foreach ($result->rows as $row) {
+                $return_array['coupon_id'] = $row['coupon_id'];
+                $return_array['start_date'] = $row['start_date'];
+                $return_array['end_date'] = $row['end_date'];
+            }
+        } else {
+            $return_array['coupon_id'] = '';
+            $return_array['start_date'] = '';
+            $return_array['end_date'] = '';
+            $return_array['is_used'] = 0;
+        }
+        return $return_array;
+    }
 
     /**
      * @param array $data

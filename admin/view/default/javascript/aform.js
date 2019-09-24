@@ -871,42 +871,86 @@ jQuery(document).ready(function() {
 	});
     $('#couponFrm_download_btn').click(function(e){
         e.preventDefault();
+        var select_code_ajax_url = $('#couponFrm_select_code_ajax_url').val();
         const rows = [
-            ["No", "name"]
+            ["No", "Code_id", "Code_name", "Coupon_id", "Is_used", "Start_date", "End Date"]
         ];
     	var selected_codes = $('#couponFrm_selected_codes').val();
         var option_values = $("#couponFrm_code > option").map(function() { return $(this).val(); });
         var option_texts = $("#couponFrm_code > option").map(function() { return $(this).text().substr(0,$(this).text().indexOf(' ')); });
     	var obj = [];
-		if(selected_codes) {
+		if(selected_codes) {// add new
             obj = JSON.parse(selected_codes);
             for(var i in obj) {
                 console.log(i, obj[i])
                 var valueToPush = new Array();
                 valueToPush[0] = parseInt(i) + 1;
-                valueToPush[1] = obj[i].name;
+                var code_id = obj[i].id;
+                valueToPush[1] = code_id;
+                valueToPush[2] = obj[i].name;
+                $.ajax({
+                    type: "POST",
+                    url: select_code_ajax_url,
+                    data: {
+                        code_id: code_id
+                    },
+                    success: function (result) {
+						console.log("code if exist ", result[0]);
+                        valueToPush[3] = result[0].coupon_id;
+                        valueToPush[4] = result[0].is_used;
+                        valueToPush[5] = result[0].start_date;
+                        valueToPush[6] = result[0].end_date;
+                    },
+                    async: false
+                });
                 rows.push(valueToPush);
             }
-		} else {
+		} else { // Edit existing..
             option_texts.each(function(j, item){
                 var valueToPush = new Array();
+                var res = {};
                 valueToPush[0] = parseInt(j) + 1;
-                valueToPush[1] = item;
-                rows.push(valueToPush);
+                var code_id = option_values[j];
+                valueToPush[1] = code_id;
+                valueToPush[2] = item;
+                $.ajax({
+                    type: "POST",
+                    url: select_code_ajax_url,
+                    data: {
+                        code_id: code_id
+                    },
+                    success: function (result) {
+                        console.log("code if exist ", result[0]);
+                        res = result[0];
+                        valueToPush[3] = result[0].coupon_id;
+                        valueToPush[4] = result[0].is_used;
+                        valueToPush[5] = result[0].start_date;
+                        valueToPush[6] = result[0].end_date;
+                        rows.push(valueToPush);
+                    },
+                    async: false
+                });
+                // valueToPush[3] = res.coupon_id;
+                // valueToPush[4] = res.is_used;
+                // valueToPush[5] = res.start_date;
+                // valueToPush[6] = res.end_date;
+                console.log("valueTpush", valueToPush);
+
 			});
 		}
 
         var csvContent = "data:text/csv;charset=utf-8,";
         var tsv_name = $('#couponFrm_coupon_description1name').val() ? $('#couponFrm_coupon_description1name').val() : "selected_codes";
-
+		console.log("rows before", rows);
         rows.forEach(function(rowArray) {
-            var row = rowArray.join(" ");
+        	console.log("rowArray", rowArray);
+            var row = rowArray.join(",");
             csvContent += row + "\r\n";
         });
         var encodedUri = encodeURI(csvContent);
         var link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", tsv_name +".tsv");
+        link.setAttribute("download", tsv_name +".csv");
         document.body.appendChild(link); // Required for FF
 
         link.click();
