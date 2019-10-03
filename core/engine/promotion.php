@@ -466,6 +466,7 @@ class APromotion{
 			return array ();
 		}
 
+
 		$status = true;
 		$coupon_query = $this->db->query("SELECT *
 										  FROM " . $this->db->table("coupons") . " c
@@ -480,9 +481,17 @@ class APromotion{
 			if ($coupon_query->row['total'] > $this->cart->getSubTotal()){
 				$status = false;
 			}
-			$coupon_redeem_query = $this->db->query("SELECT COUNT(*) AS total
-													 FROM `" . $this->db->table("orders") . "`
-													 WHERE order_status_id > '0' AND coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "'");
+
+            $coupon_redeem_query = $this->db->query("SELECT COUNT(*) AS total
+													 FROM `" . $this->db->table("orders") . "` o
+													 JOIN ". $this->db->table("customer_code") . " c ON (o.order_id = c.order_id)
+													 WHERE o.order_status_id > '0' AND o.coupon_id =  '" . (int)$coupon_query->row['coupon_id'] . "' 
+													        AND c.coupon_id = '". (int)$coupon_query->row['coupon_id'] ."'
+													        AND c.code_id = (SELECT code_id FROM abc_coupon_code WHERE code_name = '".$coupon_code."')");
+
+//			$coupon_redeem_query = $this->db->query("SELECT COUNT(*) AS total
+//													 FROM `" . $this->db->table("orders") . "`
+//													 WHERE order_status_id > '0' AND coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "'");
 
 			if ($coupon_redeem_query->row['total'] >= $coupon_query->row['uses_total'] && $coupon_query->row['uses_total'] > 0){
 				$status = false;
@@ -493,10 +502,12 @@ class APromotion{
 
 			if (!is_null($this->customer) && $this->customer->getId()){
 				$coupon_redeem_query = $this->db->query("SELECT COUNT(*) AS total
-														 FROM `" . $this->db->table("orders") . "`
-														 WHERE order_status_id > '0'
-																AND coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "'
-																AND customer_id = '" . (int)$this->customer->getId() . "'");
+														 FROM `" . $this->db->table("orders") . "` o
+														 JOIN ". $this->db->table("customer_code") . " c ON (o.order_id = c.order_id)
+														 WHERE o.order_status_id > '0' AND o.coupon_id =  '" . (int)$coupon_query->row['coupon_id'] . "' 
+																AND c.coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "'
+																AND c.code_id = (SELECT code_id FROM abc_coupon_code WHERE code_name = '".$coupon_code."'
+																AND o.customer_id = '" . (int)$this->customer->getId() . "')");
 
 				if ($coupon_redeem_query->row['total'] >= $coupon_query->row['uses_customer'] && $coupon_query->row['uses_customer'] > 0){
 					$status = false;
