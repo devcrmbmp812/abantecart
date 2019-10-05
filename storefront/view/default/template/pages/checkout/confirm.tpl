@@ -30,7 +30,7 @@
 		<button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo $text_close; ?></button>
 	</div>
 </div>
-</div>  
+</div>
 </div>
 
 <div class="contentpanel">
@@ -158,7 +158,7 @@
 	<?php echo $this->getHookVar('order_attributes'); ?>
 
 	<div class="row confirm_total">
-	
+
 		<div class="cart-info col-md-5">
 			<table class="table table-striped table-bordered">
 			    <?php
@@ -174,13 +174,13 @@
 			    <?php } ?>
 			</table>
 		</div>
-		
+
 		<div class="col-md-7 payment_confirmation">
 			<?php echo $this->getHookVar('payment_pre'); ?>
 			<div id="payment"><?php echo $payment; ?></div>
 			<?php echo $this->getHookVar('payment_post'); ?>
 		</div>
-		
+
 	</div>
 
 </div>

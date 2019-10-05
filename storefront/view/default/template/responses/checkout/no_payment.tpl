@@ -15,13 +15,14 @@
 $('body').append('<div id="blocker" style="display: none; width: 1667px; height: 1200px; z-index: 1001; background: none repeat scroll 0 0 white; opacity: 0; left: 0; position: absolute; top: 0;"></div>');
 
 $('#checkout').click(function() {
+    console.log("here");
 	$('#blocker').show();
 	$.ajax({
 		type: 'GET',
 		url: '<?php echo $this->html->getURL('r/checkout/no_payment/confirm');?>',
 		success: function() {
 			location = '<?php echo $continue; ?>';
-		}		
+		}
 	});
 });
 </script>

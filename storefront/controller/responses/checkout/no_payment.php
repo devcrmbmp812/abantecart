@@ -81,6 +81,19 @@ class ControllerResponsesCheckoutNoPayment extends AController {
 
 		$this->load->model('checkout/order');
 		$this->model_checkout_order->confirm($this->session->data['order_id'], $this->config->get('config_order_status_id'));
+
+        $coupon_name = $this->session->data['coupon'];
+        if($coupon_name) {
+            $coupon_info = $this->model_checkout_order->getCouponInfo($coupon_name);
+
+            $code_id = $coupon_info['code_id'];
+            $coupon_id = $coupon_info['coupon_id'];
+            $customer_id = $this->session->data['customer_id'];
+            $order_id = $this->session->data['order_id'];
+
+            $this->model_checkout_order->addCustomerCode($coupon_id, $order_id, $customer_id, $code_id);
+        }
+
 		$this->extensions->hk_UpdateData($this,__FUNCTION__);
 	}
 }

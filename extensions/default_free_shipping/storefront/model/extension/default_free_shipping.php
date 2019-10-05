@@ -47,7 +47,7 @@ class ModelExtensionDefaultFreeShipping extends Model {
 		}
 
 		if ($this->cart->getSubTotal() < $this->config->get('default_free_shipping_total')) {
-			$status = FALSE;
+			$status = TRUE;
 		}
 		
 		$method_data = array();
